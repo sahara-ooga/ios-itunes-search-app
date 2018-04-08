@@ -24,7 +24,7 @@ class iTunesSearchResultTests: XCTestCase {
     func testDecodeResponseJSON() {
         let expectedSearchResultsCount = 3
         let searchResultData = iTunesSearchResultTests.jsonDataFromFile("iTunesResponse")!
-        guard let searchResult = try? JSONDecoder().decode(iTunesSearchResult.self,
+        guard let searchResult = try? JSONDecoder().decode(iTunesSearchResponse.self,
                                                            from: searchResultData) else {
             XCTFail("decoded result is nil")
             return

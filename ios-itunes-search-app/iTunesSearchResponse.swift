@@ -1,5 +1,5 @@
 //
-//  iTunesSearchResult.swift
+//  iTunesSearchResponse.swift
 //  ios-swiftbond-sample
 //
 //  Created by yogasawara@stv on 2018/04/02.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct iTunesSearchResult: Codable {
+struct iTunesSearchResponse: Codable {
     let resultCount: Int
     let results: [iTunesTrack]
     
@@ -88,9 +88,9 @@ struct iTunesTrack: Codable {
 
 // MARK: Convenience initializers
 
-extension iTunesSearchResult {
+extension iTunesSearchResponse {
     init(data: Data) throws {
-        self = try JSONDecoder().decode(iTunesSearchResult.self, from: data)
+        self = try JSONDecoder().decode(iTunesSearchResponse.self, from: data)
     }
     
     init(_ json: String, using encoding: String.Encoding = .utf8) throws {
