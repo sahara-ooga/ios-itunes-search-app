@@ -182,14 +182,12 @@
 		10A55B9A2079DF5300C8E8C8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				10D41382207A5145004977AB /* Error */,
 				10A55BAB2079EEDC00C8E8C8 /* APIKit */,
 				10A55B9B2079DF8D00C8E8C8 /* iTunesSearchResponse.swift */,
 				10A55BB72079FFCD00C8E8C8 /* iTunesSearchAPIClient.swift */,
 				10A55BBE207A0A6300C8E8C8 /* NetworkUtil.swift */,
-				10A55BC2207A0EF900C8E8C8 /* ConnectionError.swift */,
 				10D4137A207A44F1004977AB /* ArtworkClient.swift */,
-				10D4137C207A460B004977AB /* RequestError.swift */,
-				10D4137E207A47A0004977AB /* ArtworkResponseError.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -229,6 +227,16 @@
 				10A55BB02079F14500C8E8C8 /* iTunesSearchAPI.swift */,
 			);
 			name = APIKit;
+			sourceTree = "<group>";
+		};
+		10D41382207A5145004977AB /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				10D4137C207A460B004977AB /* RequestError.swift */,
+				10A55BC2207A0EF900C8E8C8 /* ConnectionError.swift */,
+				10D4137E207A47A0004977AB /* ArtworkResponseError.swift */,
+			);
+			name = Error;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -40,11 +40,6 @@ struct ArtworkClient {
                 //TODO: エラーの分類
                 print(e)
             } else {
-//                guard let response = resp else {
-//                    completion(.failure(SessionTaskError.responseError(ArtworkResponseError.ressponseIsNil)))
-//                    return
-//                }
-//                print(response.)
                 guard let imageData = data else {
                     completion(.failure(SessionTaskError.responseError(ArtworkResponseError.dataIsNil)))
                     return
