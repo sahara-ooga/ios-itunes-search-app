@@ -31,7 +31,7 @@ class NetworkUtilTests: XCTestCase {
     }
     
     func testNetworkUtilReachability() {
-        let connectivity = NetworkUtil.connectivity()
+        let connectivity = NetworkUtil().connectivity()
         print(connectivity)
     }
 }

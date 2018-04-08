@@ -5,22 +5,22 @@
 //  Created by yogasawara@stv on 2018/04/08.
 //  Copyright © 2018年 sunday carpenter. All rights reserved.
 //
-
-
-struct NetworkUtil { }
-
-// MARK: - Reachability
 import Reachability
 
-extension NetworkUtil {
-    enum Connnectibity {
-        case none
-        case cellular
-        case wifi
-        case reachabilityInitError
-    }
-    
-    static func connectivity() -> Connnectibity {
+enum Connnectibity {
+    case none
+    case cellular
+    case wifi
+    case reachabilityInitError
+}
+
+protocol ConnnectibityCheckable {
+    /// - NOTE: 動的ディスパッチにするためには、デフォルト実装だけでなくメソッドの定義が必要
+    func connectivity() -> Connnectibity
+}
+
+extension ConnnectibityCheckable {
+    func connectivity() -> Connnectibity {
         guard let reachability = Reachability() else {
             return .reachabilityInitError
         }
@@ -36,4 +36,6 @@ extension NetworkUtil {
     }
 }
 
+struct NetworkUtil { }
+extension NetworkUtil: ConnnectibityCheckable { }
 

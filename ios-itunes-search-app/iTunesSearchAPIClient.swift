@@ -11,13 +11,25 @@ import APIKit
 import Result
 
 struct iTunesSearchAPIClient {
-    static func searchTracks(query: String,
-                             limit: Int = 50,
-                             completion: @escaping (Result<iTunesSearchResponse, APIKit.SessionTaskError>) -> Void) {
-        //接続可能性をチェックし、通信不可能ならエラーを投げる
-        let connectivity =  NetworkUtil.connectivity()
+    // MARK: DI
+    typealias Dependency = (
+        ConnnectibityCheckable
+    )
+    let dependency: Dependency
+    
+    init(dependency: Dependency) {
+        self.dependency = dependency
+    }
+    
+    func searchTracks(query: String,
+                     limit: Int = 50,
+                     completion: @escaping (Result<iTunesSearchResponse, APIKit.SessionTaskError>) -> Void) {
+        let connectivityChecker = self.dependency
+        //接続可能性をチェックし、通信不可能ならエラーを投げて終了
+        let connectivity =  connectivityChecker.connectivity()
         if case .none = connectivity {
            completion(.failure(SessionTaskError.connectionError(ConnectionError.noConnection)))
+            return
         }
         
         let request = iTunesSearchAPI.SearchTracks(query: query, limit: limit)
