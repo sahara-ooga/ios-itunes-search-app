@@ -32,6 +32,10 @@
 		10A55BBF207A0A6300C8E8C8 /* NetworkUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A55BBE207A0A6300C8E8C8 /* NetworkUtil.swift */; };
 		10A55BC1207A0A9000C8E8C8 /* NetworkUtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A55BC0207A0A9000C8E8C8 /* NetworkUtilTests.swift */; };
 		10A55BC3207A0EF900C8E8C8 /* ConnectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A55BC2207A0EF900C8E8C8 /* ConnectionError.swift */; };
+		10D4137B207A44F2004977AB /* ArtworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4137A207A44F1004977AB /* ArtworkClient.swift */; };
+		10D4137D207A460B004977AB /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4137C207A460B004977AB /* RequestError.swift */; };
+		10D4137F207A47A0004977AB /* ArtworkResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4137E207A47A0004977AB /* ArtworkResponseError.swift */; };
+		10D41381207A4A04004977AB /* ArtworkClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D41380207A4A04004977AB /* ArtworkClientTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +76,10 @@
 		10A55BBE207A0A6300C8E8C8 /* NetworkUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtil.swift; sourceTree = "<group>"; };
 		10A55BC0207A0A9000C8E8C8 /* NetworkUtilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtilTests.swift; sourceTree = "<group>"; };
 		10A55BC2207A0EF900C8E8C8 /* ConnectionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionError.swift; sourceTree = "<group>"; };
+		10D4137A207A44F1004977AB /* ArtworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkClient.swift; sourceTree = "<group>"; };
+		10D4137C207A460B004977AB /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		10D4137E207A47A0004977AB /* ArtworkResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkResponseError.swift; sourceTree = "<group>"; };
+		10D41380207A4A04004977AB /* ArtworkClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkClientTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,12 +140,13 @@
 		1061B52220641363006B75E6 /* ios-itunes-search-appTests */ = {
 			isa = PBXGroup;
 			children = (
+				10A55B9D2079E27800C8E8C8 /* Resources */,
+				10A55BA12079E3C600C8E8C8 /* Support Files */,
 				1061B52320641363006B75E6 /* iTunesSearchResultTests.swift */,
 				10A55BB22079F2F200C8E8C8 /* iTunesSearchAPITests.swift */,
 				10A55BB9207A037B00C8E8C8 /* iTunesSearchAPIClientTests.swift */,
 				10A55BC0207A0A9000C8E8C8 /* NetworkUtilTests.swift */,
-				10A55BA12079E3C600C8E8C8 /* Support Files */,
-				10A55B9D2079E27800C8E8C8 /* Resources */,
+				10D41380207A4A04004977AB /* ArtworkClientTests.swift */,
 			);
 			path = "ios-itunes-search-appTests";
 			sourceTree = "<group>";
@@ -178,6 +187,9 @@
 				10A55BB72079FFCD00C8E8C8 /* iTunesSearchAPIClient.swift */,
 				10A55BBE207A0A6300C8E8C8 /* NetworkUtil.swift */,
 				10A55BC2207A0EF900C8E8C8 /* ConnectionError.swift */,
+				10D4137A207A44F1004977AB /* ArtworkClient.swift */,
+				10D4137C207A460B004977AB /* RequestError.swift */,
+				10D4137E207A47A0004977AB /* ArtworkResponseError.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -368,7 +380,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				10A55BC3207A0EF900C8E8C8 /* ConnectionError.swift in Sources */,
+				10D4137B207A44F2004977AB /* ArtworkClient.swift in Sources */,
 				10A55BAF2079F03F00C8E8C8 /* iTunesSearchRequest.swift in Sources */,
+				10D4137F207A47A0004977AB /* ArtworkResponseError.swift in Sources */,
+				10D4137D207A460B004977AB /* RequestError.swift in Sources */,
 				1061B51120641363006B75E6 /* ViewController.swift in Sources */,
 				10A55BB12079F14500C8E8C8 /* iTunesSearchAPI.swift in Sources */,
 				10A55B9C2079DF8D00C8E8C8 /* iTunesSearchResponse.swift in Sources */,
@@ -386,6 +401,7 @@
 				10A55BB32079F2F200C8E8C8 /* iTunesSearchAPITests.swift in Sources */,
 				10A55BA42079E42A00C8E8C8 /* XCTest+Utils.swift in Sources */,
 				10A55BC1207A0A9000C8E8C8 /* NetworkUtilTests.swift in Sources */,
+				10D41381207A4A04004977AB /* ArtworkClientTests.swift in Sources */,
 				10A55BBA207A037B00C8E8C8 /* iTunesSearchAPIClientTests.swift in Sources */,
 				1061B52420641363006B75E6 /* iTunesSearchResultTests.swift in Sources */,
 			);
