@@ -9,7 +9,7 @@
 import XCTest
 @testable import ios_itunes_search_app
 
-class ios_itunes_search_appTests: XCTestCase {
+class iTunesSearchResultTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -21,16 +21,15 @@ class ios_itunes_search_appTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testDecodeResponseJSON() {
+        let expectedSearchResultsCount = 3
+        let searchResultData = iTunesSearchResultTests.jsonDataFromFile("iTunesResponse")!
+        guard let searchResult = try? JSONDecoder().decode(iTunesSearchResult.self,
+                                                           from: searchResultData) else {
+            XCTFail("decoded result is nil")
+            return
         }
+        XCTAssertEqual(searchResult.results.count, expectedSearchResultsCount)
     }
     
 }
