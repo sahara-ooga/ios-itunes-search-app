@@ -22,7 +22,7 @@ class iTunesSearchAPITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testSearchTracks() {
         let expectation = XCTestExpectation(description: "Search iTunes API")
         
         Session.send(iTunesSearchAPI.SearchTracks(query: "jack+johnson", limit: 3)) { result in
