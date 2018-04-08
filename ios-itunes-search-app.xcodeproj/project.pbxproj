@@ -27,6 +27,11 @@
 		10A55BB52079F36900C8E8C8 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A55BA72079EE4100C8E8C8 /* Result.framework */; };
 		10A55BB82079FFCD00C8E8C8 /* iTunesSearchAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A55BB72079FFCD00C8E8C8 /* iTunesSearchAPIClient.swift */; };
 		10A55BBA207A037B00C8E8C8 /* iTunesSearchAPIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A55BB9207A037B00C8E8C8 /* iTunesSearchAPIClientTests.swift */; };
+		10A55BBC207A099A00C8E8C8 /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A55BBB207A099A00C8E8C8 /* Reachability.framework */; };
+		10A55BBD207A09DE00C8E8C8 /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A55BBB207A099A00C8E8C8 /* Reachability.framework */; };
+		10A55BBF207A0A6300C8E8C8 /* NetworkUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A55BBE207A0A6300C8E8C8 /* NetworkUtil.swift */; };
+		10A55BC1207A0A9000C8E8C8 /* NetworkUtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A55BC0207A0A9000C8E8C8 /* NetworkUtilTests.swift */; };
+		10A55BC3207A0EF900C8E8C8 /* ConnectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A55BC2207A0EF900C8E8C8 /* ConnectionError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +68,10 @@
 		10A55BB22079F2F200C8E8C8 /* iTunesSearchAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchAPITests.swift; sourceTree = "<group>"; };
 		10A55BB72079FFCD00C8E8C8 /* iTunesSearchAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchAPIClient.swift; sourceTree = "<group>"; };
 		10A55BB9207A037B00C8E8C8 /* iTunesSearchAPIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchAPIClientTests.swift; sourceTree = "<group>"; };
+		10A55BBB207A099A00C8E8C8 /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = Carthage/Build/iOS/Reachability.framework; sourceTree = "<group>"; };
+		10A55BBE207A0A6300C8E8C8 /* NetworkUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtil.swift; sourceTree = "<group>"; };
+		10A55BC0207A0A9000C8E8C8 /* NetworkUtilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtilTests.swift; sourceTree = "<group>"; };
+		10A55BC2207A0EF900C8E8C8 /* ConnectionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10A55BBC207A099A00C8E8C8 /* Reachability.framework in Frameworks */,
 				10A55BA82079EE4100C8E8C8 /* APIKit.framework in Frameworks */,
 				10A55BA92079EE4100C8E8C8 /* Result.framework in Frameworks */,
 			);
@@ -79,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10A55BBD207A09DE00C8E8C8 /* Reachability.framework in Frameworks */,
 				10A55BB42079F36900C8E8C8 /* APIKit.framework in Frameworks */,
 				10A55BB52079F36900C8E8C8 /* Result.framework in Frameworks */,
 			);
@@ -124,6 +135,7 @@
 				1061B52320641363006B75E6 /* iTunesSearchResultTests.swift */,
 				10A55BB22079F2F200C8E8C8 /* iTunesSearchAPITests.swift */,
 				10A55BB9207A037B00C8E8C8 /* iTunesSearchAPIClientTests.swift */,
+				10A55BC0207A0A9000C8E8C8 /* NetworkUtilTests.swift */,
 				10A55BA12079E3C600C8E8C8 /* Support Files */,
 				10A55B9D2079E27800C8E8C8 /* Resources */,
 			);
@@ -164,6 +176,8 @@
 				10A55BAB2079EEDC00C8E8C8 /* APIKit */,
 				10A55B9B2079DF8D00C8E8C8 /* iTunesSearchResponse.swift */,
 				10A55BB72079FFCD00C8E8C8 /* iTunesSearchAPIClient.swift */,
+				10A55BBE207A0A6300C8E8C8 /* NetworkUtil.swift */,
+				10A55BC2207A0EF900C8E8C8 /* ConnectionError.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -188,6 +202,7 @@
 		10A55BA52079EE4000C8E8C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				10A55BBB207A099A00C8E8C8 /* Reachability.framework */,
 				10A55BA62079EE4100C8E8C8 /* APIKit.framework */,
 				10A55BA72079EE4100C8E8C8 /* Result.framework */,
 			);
@@ -315,10 +330,12 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/APIKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Reachability.framework",
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Result.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/APIKit.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Reachability.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -332,10 +349,12 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/APIKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Reachability.framework",
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Result.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/APIKit.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Reachability.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -348,10 +367,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10A55BC3207A0EF900C8E8C8 /* ConnectionError.swift in Sources */,
 				10A55BAF2079F03F00C8E8C8 /* iTunesSearchRequest.swift in Sources */,
 				1061B51120641363006B75E6 /* ViewController.swift in Sources */,
 				10A55BB12079F14500C8E8C8 /* iTunesSearchAPI.swift in Sources */,
 				10A55B9C2079DF8D00C8E8C8 /* iTunesSearchResponse.swift in Sources */,
+				10A55BBF207A0A6300C8E8C8 /* NetworkUtil.swift in Sources */,
 				10A55BB82079FFCD00C8E8C8 /* iTunesSearchAPIClient.swift in Sources */,
 				10A55BAD2079EF6500C8E8C8 /* DecodableDataParser.swift in Sources */,
 				1061B50F20641363006B75E6 /* AppDelegate.swift in Sources */,
@@ -364,6 +385,7 @@
 			files = (
 				10A55BB32079F2F200C8E8C8 /* iTunesSearchAPITests.swift in Sources */,
 				10A55BA42079E42A00C8E8C8 /* XCTest+Utils.swift in Sources */,
+				10A55BC1207A0A9000C8E8C8 /* NetworkUtilTests.swift in Sources */,
 				10A55BBA207A037B00C8E8C8 /* iTunesSearchAPIClientTests.swift in Sources */,
 				1061B52420641363006B75E6 /* iTunesSearchResultTests.swift in Sources */,
 			);

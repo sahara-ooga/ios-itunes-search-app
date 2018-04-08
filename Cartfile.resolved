@@ -1,2 +1,3 @@
 github "antitypical/Result" "3.2.4"
+github "ashleymills/Reachability.swift" "v4.1.0"
 github "ishkawa/APIKit" "3.2.1"
