@@ -36,6 +36,8 @@
 		1061B51F20641363006B75E6 /* ios-itunes-search-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-itunes-search-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1061B52320641363006B75E6 /* ios_itunes_search_appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_itunes_search_appTests.swift; sourceTree = "<group>"; };
 		1061B52520641363006B75E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1061B52F2064140A006B75E6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1061B53020641441006B75E6 /* APIRequest&Response.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "APIRequest&Response.md"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 		1061B50220641362006B75E6 = {
 			isa = PBXGroup;
 			children = (
+				1061B52E206413D9006B75E6 /* Documents */,
 				1061B50D20641363006B75E6 /* ios-itunes-search-app */,
 				1061B52220641363006B75E6 /* ios-itunes-search-appTests */,
 				1061B50C20641363006B75E6 /* Products */,
@@ -94,6 +97,15 @@
 				1061B52520641363006B75E6 /* Info.plist */,
 			);
 			path = "ios-itunes-search-appTests";
+			sourceTree = "<group>";
+		};
+		1061B52E206413D9006B75E6 /* Documents */ = {
+			isa = PBXGroup;
+			children = (
+				1061B52F2064140A006B75E6 /* README.md */,
+				1061B53020641441006B75E6 /* APIRequest&Response.md */,
+			);
+			path = Documents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
