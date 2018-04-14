@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10457EAE2082420100E938BD /* ArtworkDtoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10457EAD2082420100E938BD /* ArtworkDtoTests.swift */; };
+		10457EB0208243CB00E938BD /* ArtworkDaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10457EAF208243CB00E938BD /* ArtworkDaoTests.swift */; };
+		10457EB4208250F600E938BD /* spareribs.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10457EB3208250F600E938BD /* spareribs.jpg */; };
+		10457EB5208250F600E938BD /* spareribs.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10457EB3208250F600E938BD /* spareribs.jpg */; };
+		10457EB72082512500E938BD /* snow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10457EB62082512500E938BD /* snow.jpg */; };
+		10457EB82082512500E938BD /* snow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10457EB62082512500E938BD /* snow.jpg */; };
+		1050CAB5207A66B300F5B554 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1050CAB3207A66B200F5B554 /* Realm.framework */; };
+		1050CAB6207A66B300F5B554 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1050CAB4207A66B300F5B554 /* RealmSwift.framework */; };
+		1050CAB9207A673800F5B554 /* RealmDaoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050CAB8207A673800F5B554 /* RealmDaoHelper.swift */; };
+		1050CABB207A67F800F5B554 /* ArtworkDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050CABA207A67F800F5B554 /* ArtworkDto.swift */; };
+		1050CABD207A68BC00F5B554 /* ArtworkDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050CABC207A68BC00F5B554 /* ArtworkDao.swift */; };
 		1061B50F20641363006B75E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1061B50E20641363006B75E6 /* AppDelegate.swift */; };
 		1061B51120641363006B75E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1061B51020641363006B75E6 /* ViewController.swift */; };
 		1061B51420641363006B75E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1061B51220641363006B75E6 /* Main.storyboard */; };
@@ -49,6 +60,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		10457EAD2082420100E938BD /* ArtworkDtoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkDtoTests.swift; sourceTree = "<group>"; };
+		10457EAF208243CB00E938BD /* ArtworkDaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkDaoTests.swift; sourceTree = "<group>"; };
+		10457EB3208250F600E938BD /* spareribs.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = spareribs.jpg; sourceTree = "<group>"; };
+		10457EB62082512500E938BD /* snow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = snow.jpg; sourceTree = "<group>"; };
+		1050CAB3207A66B200F5B554 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		1050CAB4207A66B300F5B554 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		1050CAB8207A673800F5B554 /* RealmDaoHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDaoHelper.swift; sourceTree = "<group>"; };
+		1050CABA207A67F800F5B554 /* ArtworkDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkDto.swift; sourceTree = "<group>"; };
+		1050CABC207A68BC00F5B554 /* ArtworkDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkDao.swift; sourceTree = "<group>"; };
 		1061B50B20641363006B75E6 /* ios-itunes-search-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-itunes-search-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1061B50E20641363006B75E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1061B51020641363006B75E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +107,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1050CAB5207A66B300F5B554 /* Realm.framework in Frameworks */,
+				1050CAB6207A66B300F5B554 /* RealmSwift.framework in Frameworks */,
 				10A55BBC207A099A00C8E8C8 /* Reachability.framework in Frameworks */,
 				10A55BA82079EE4100C8E8C8 /* APIKit.framework in Frameworks */,
 				10A55BA92079EE4100C8E8C8 /* Result.framework in Frameworks */,
@@ -106,6 +128,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1050CAB7207A66ED00F5B554 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				1050CAB8207A673800F5B554 /* RealmDaoHelper.swift */,
+				1050CABA207A67F800F5B554 /* ArtworkDto.swift */,
+				1050CABC207A68BC00F5B554 /* ArtworkDao.swift */,
+			);
+			name = Realm;
+			sourceTree = "<group>";
+		};
 		1061B50220641362006B75E6 = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +179,8 @@
 				10A55BB9207A037B00C8E8C8 /* iTunesSearchAPIClientTests.swift */,
 				10A55BC0207A0A9000C8E8C8 /* NetworkUtilTests.swift */,
 				10D41380207A4A04004977AB /* ArtworkClientTests.swift */,
+				10457EAD2082420100E938BD /* ArtworkDtoTests.swift */,
+				10457EAF208243CB00E938BD /* ArtworkDaoTests.swift */,
 			);
 			path = "ios-itunes-search-appTests";
 			sourceTree = "<group>";
@@ -182,6 +216,7 @@
 		10A55B9A2079DF5300C8E8C8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1050CAB7207A66ED00F5B554 /* Realm */,
 				10D41382207A5145004977AB /* Error */,
 				10A55BAB2079EEDC00C8E8C8 /* APIKit */,
 				10A55B9B2079DF8D00C8E8C8 /* iTunesSearchResponse.swift */,
@@ -204,6 +239,8 @@
 		10A55BA12079E3C600C8E8C8 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				10457EB62082512500E938BD /* snow.jpg */,
+				10457EB3208250F600E938BD /* spareribs.jpg */,
 				10A55BA22079E42A00C8E8C8 /* XCTest+Utils.swift */,
 			);
 			name = "Support Files";
@@ -212,6 +249,8 @@
 		10A55BA52079EE4000C8E8C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1050CAB3207A66B200F5B554 /* Realm.framework */,
+				1050CAB4207A66B300F5B554 /* RealmSwift.framework */,
 				10A55BBB207A099A00C8E8C8 /* Reachability.framework */,
 				10A55BA62079EE4100C8E8C8 /* APIKit.framework */,
 				10A55BA72079EE4100C8E8C8 /* Result.framework */,
@@ -325,8 +364,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1061B51920641363006B75E6 /* LaunchScreen.storyboard in Resources */,
+				10457EB4208250F600E938BD /* spareribs.jpg in Resources */,
 				1061B51620641363006B75E6 /* Assets.xcassets in Resources */,
 				10A55B9F2079E2D600C8E8C8 /* iTunesResponse.json in Resources */,
+				10457EB72082512500E938BD /* snow.jpg in Resources */,
 				1061B51420641363006B75E6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,6 +377,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				10A55BA02079E2D600C8E8C8 /* iTunesResponse.json in Resources */,
+				10457EB82082512500E938BD /* snow.jpg in Resources */,
+				10457EB5208250F600E938BD /* spareribs.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,11 +394,15 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/APIKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Reachability.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Result.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/APIKit.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Reachability.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Realm.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -370,11 +417,15 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/APIKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Reachability.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Result.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/APIKit.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Reachability.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Realm.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -394,8 +445,11 @@
 				10D4137D207A460B004977AB /* RequestError.swift in Sources */,
 				1061B51120641363006B75E6 /* ViewController.swift in Sources */,
 				10A55BB12079F14500C8E8C8 /* iTunesSearchAPI.swift in Sources */,
+				1050CAB9207A673800F5B554 /* RealmDaoHelper.swift in Sources */,
+				1050CABB207A67F800F5B554 /* ArtworkDto.swift in Sources */,
 				10A55B9C2079DF8D00C8E8C8 /* iTunesSearchResponse.swift in Sources */,
 				10A55BBF207A0A6300C8E8C8 /* NetworkUtil.swift in Sources */,
+				1050CABD207A68BC00F5B554 /* ArtworkDao.swift in Sources */,
 				10A55BB82079FFCD00C8E8C8 /* iTunesSearchAPIClient.swift in Sources */,
 				10A55BAD2079EF6500C8E8C8 /* DecodableDataParser.swift in Sources */,
 				1061B50F20641363006B75E6 /* AppDelegate.swift in Sources */,
@@ -407,8 +461,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				10A55BB32079F2F200C8E8C8 /* iTunesSearchAPITests.swift in Sources */,
+				10457EB0208243CB00E938BD /* ArtworkDaoTests.swift in Sources */,
 				10A55BA42079E42A00C8E8C8 /* XCTest+Utils.swift in Sources */,
 				10A55BC1207A0A9000C8E8C8 /* NetworkUtilTests.swift in Sources */,
+				10457EAE2082420100E938BD /* ArtworkDtoTests.swift in Sources */,
 				10D41381207A4A04004977AB /* ArtworkClientTests.swift in Sources */,
 				10A55BBA207A037B00C8E8C8 /* iTunesSearchAPIClientTests.swift in Sources */,
 				1061B52420641363006B75E6 /* iTunesSearchResultTests.swift in Sources */,

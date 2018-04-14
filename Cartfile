@@ -1,2 +1,3 @@
 github "ishkawa/APIKit"
 github "ashleymills/Reachability.swift"
+github "realm/realm-cocoa"
