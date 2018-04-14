@@ -38,7 +38,7 @@ class ArtworkClientTests: XCTestCase {
     func testWhenNoConnectivity() {
         let imageURL = "http://is1.mzstatic.com/image/thumb/Music2/v4/a2/66/32/a2663205-663c-8301-eec7-57937c2d0878/source/100x100bb.jpg"
         /// 通信不可能時の状況を再現するモック
-        struct MockNetworkUtil:ConnnectibityCheckable {
+        struct MockNetworkUtil: ConnnectibityCheckable {
             func connectivity() -> Connnectibity {
                 return .none
             }
