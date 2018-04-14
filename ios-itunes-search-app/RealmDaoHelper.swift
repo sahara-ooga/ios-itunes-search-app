@@ -69,6 +69,14 @@ final class RealmDaoHelper <T : RealmSwift.Object> {
         return realm.objects(T.self).filter(predicate)
     }
     
+    /// フィルタリングしたレコードを取得
+    ///
+    /// - Parameter predicate: フィルタリングの条件
+    /// - Returns: フィルタリングしたレコードの配列
+    func find(by predicate:String) -> Results<T> {
+        return realm.objects(T.self).filter(predicate)
+    }
+    
     /**
      * レコードを追加
      */

@@ -62,6 +62,9 @@ extension ArtworkDao {
     static func find(by predicate: NSPredicate) -> [ArtworkDto] {
         return ArtworkDao.dao.find(by: predicate).map({ArtworkDto(value: $0)})
     }
+    static func find(by predicate: String) -> [ArtworkDto] {
+        return ArtworkDao.dao.find(by: predicate).map({ArtworkDto(value: $0)})
+    }
 }
 
 extension ArtworkDao {

@@ -110,6 +110,27 @@ class ArtworkDaoTests: XCTestCase {
         //Verify
         verifyCount(count:3)
     }
+    /// 3つエンティティを追加し、ロードする際にURLで１つに絞り込む
+    func testFindByUrl() {
+        let expected = (count: 1, image: UIImage(named: "snow.jpg"))
+        threeArtworks.forEach({ArtworkDao.add(model:$0)})
+        let predicates = [
+            NSPredicate(format: "url = %@", argumentArray: ["https://1.example.com"])
+            ]
+        let compoundedPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
+        let result = ArtworkDao.find(by: compoundedPredicate)
+        
+        XCTAssertEqual(result.count, expected.count)
+        compareJpegImage(lhs: result.first?.image, rhs: expected.image)
+    }
+    /// LIKE句で、URLに関するワイルドカードを使って絞り込む
+    func testFind3RecordByUrl() {
+        let expected = 3
+        threeArtworks.forEach({ArtworkDao.add(model:$0)})
+        let predicate = NSPredicate(format: "url LIKE '*.example.com'")
+        let result = ArtworkDao.find(by: predicate)
+        XCTAssertEqual(result.count, expected)
+    }
 }
 extension ArtworkDaoTests {
     func verifyFirstItem(expectedId: Int, expectedUrl: String,
@@ -133,6 +154,24 @@ extension ArtworkDaoTests {
         if lhs == nil, rhs == nil { return }
         guard let lImage = lhs, let rImage = rhs else { XCTFail("想定外のエラー"); return }
         XCTAssertTrue(lImage.base64EncodedStringFromJpeg == rImage.base64EncodedStringFromJpeg)
+    }
+    var threeArtworks: [ArtworkDto] {
+        let object1 = ArtworkDto()
+        object1.id = 1
+        object1.url = "https://1.example.com"
+        object1.image = UIImage(named: "snow.jpg")
+        
+        let object2 = ArtworkDto()
+        object2.id = 2
+        object2.url = "https://2.example.com"
+        object2.image = UIImage(named: "snow.jpg")
+        
+        let object3 = ArtworkDto()
+        object3.id = 3
+        object3.url = "https://3.example.com"
+        object3.image = UIImage(named: "sparerib.jpg")
+        
+        return [object1, object2, object3]
     }
 }
 extension UIImage {
