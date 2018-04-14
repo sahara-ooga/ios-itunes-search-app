@@ -45,6 +45,7 @@
 		10A55BC3207A0EF900C8E8C8 /* ConnectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A55BC2207A0EF900C8E8C8 /* ConnectionError.swift */; };
 		10AE65DD2082751E0072DF6C /* RepositoryTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10AE65DC2082751E0072DF6C /* RepositoryTool.framework */; };
 		10AE65DF208278060072DF6C /* ArtworkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE65DE208278060072DF6C /* ArtworkRepository.swift */; };
+		10AE65E120827B140072DF6C /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE65E020827B140072DF6C /* Artwork.swift */; };
 		10D4137B207A44F2004977AB /* ArtworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4137A207A44F1004977AB /* ArtworkClient.swift */; };
 		10D4137D207A460B004977AB /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4137C207A460B004977AB /* RequestError.swift */; };
 		10D4137F207A47A0004977AB /* ArtworkResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4137E207A47A0004977AB /* ArtworkResponseError.swift */; };
@@ -100,6 +101,7 @@
 		10A55BC2207A0EF900C8E8C8 /* ConnectionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionError.swift; sourceTree = "<group>"; };
 		10AE65DC2082751E0072DF6C /* RepositoryTool.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RepositoryTool.framework; path = Carthage/Build/iOS/RepositoryTool.framework; sourceTree = "<group>"; };
 		10AE65DE208278060072DF6C /* ArtworkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkRepository.swift; sourceTree = "<group>"; };
+		10AE65E020827B140072DF6C /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
 		10D4137A207A44F1004977AB /* ArtworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkClient.swift; sourceTree = "<group>"; };
 		10D4137C207A460B004977AB /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		10D4137E207A47A0004977AB /* ArtworkResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkResponseError.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 				10A55BBE207A0A6300C8E8C8 /* NetworkUtil.swift */,
 				10D4137A207A44F1004977AB /* ArtworkClient.swift */,
 				10AE65DE208278060072DF6C /* ArtworkRepository.swift */,
+				10AE65E020827B140072DF6C /* Artwork.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				10AE65DF208278060072DF6C /* ArtworkRepository.swift in Sources */,
 				1061B51120641363006B75E6 /* ViewController.swift in Sources */,
 				10A55BB12079F14500C8E8C8 /* iTunesSearchAPI.swift in Sources */,
+				10AE65E120827B140072DF6C /* Artwork.swift in Sources */,
 				1050CAB9207A673800F5B554 /* RealmDaoHelper.swift in Sources */,
 				1050CABB207A67F800F5B554 /* ArtworkDto.swift in Sources */,
 				10A55B9C2079DF8D00C8E8C8 /* iTunesSearchResponse.swift in Sources */,
