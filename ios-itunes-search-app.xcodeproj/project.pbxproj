@@ -43,6 +43,8 @@
 		10A55BBF207A0A6300C8E8C8 /* NetworkUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A55BBE207A0A6300C8E8C8 /* NetworkUtil.swift */; };
 		10A55BC1207A0A9000C8E8C8 /* NetworkUtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A55BC0207A0A9000C8E8C8 /* NetworkUtilTests.swift */; };
 		10A55BC3207A0EF900C8E8C8 /* ConnectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A55BC2207A0EF900C8E8C8 /* ConnectionError.swift */; };
+		10AE65DD2082751E0072DF6C /* RepositoryTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10AE65DC2082751E0072DF6C /* RepositoryTool.framework */; };
+		10AE65DF208278060072DF6C /* ArtworkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE65DE208278060072DF6C /* ArtworkRepository.swift */; };
 		10D4137B207A44F2004977AB /* ArtworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4137A207A44F1004977AB /* ArtworkClient.swift */; };
 		10D4137D207A460B004977AB /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4137C207A460B004977AB /* RequestError.swift */; };
 		10D4137F207A47A0004977AB /* ArtworkResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4137E207A47A0004977AB /* ArtworkResponseError.swift */; };
@@ -96,6 +98,8 @@
 		10A55BBE207A0A6300C8E8C8 /* NetworkUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtil.swift; sourceTree = "<group>"; };
 		10A55BC0207A0A9000C8E8C8 /* NetworkUtilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtilTests.swift; sourceTree = "<group>"; };
 		10A55BC2207A0EF900C8E8C8 /* ConnectionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionError.swift; sourceTree = "<group>"; };
+		10AE65DC2082751E0072DF6C /* RepositoryTool.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RepositoryTool.framework; path = Carthage/Build/iOS/RepositoryTool.framework; sourceTree = "<group>"; };
+		10AE65DE208278060072DF6C /* ArtworkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkRepository.swift; sourceTree = "<group>"; };
 		10D4137A207A44F1004977AB /* ArtworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkClient.swift; sourceTree = "<group>"; };
 		10D4137C207A460B004977AB /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		10D4137E207A47A0004977AB /* ArtworkResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkResponseError.swift; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10AE65DD2082751E0072DF6C /* RepositoryTool.framework in Frameworks */,
 				1050CAB5207A66B300F5B554 /* Realm.framework in Frameworks */,
 				1050CAB6207A66B300F5B554 /* RealmSwift.framework in Frameworks */,
 				10A55BBC207A099A00C8E8C8 /* Reachability.framework in Frameworks */,
@@ -223,6 +228,7 @@
 				10A55BB72079FFCD00C8E8C8 /* iTunesSearchAPIClient.swift */,
 				10A55BBE207A0A6300C8E8C8 /* NetworkUtil.swift */,
 				10D4137A207A44F1004977AB /* ArtworkClient.swift */,
+				10AE65DE208278060072DF6C /* ArtworkRepository.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -249,6 +255,7 @@
 		10A55BA52079EE4000C8E8C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				10AE65DC2082751E0072DF6C /* RepositoryTool.framework */,
 				1050CAB3207A66B200F5B554 /* Realm.framework */,
 				1050CAB4207A66B300F5B554 /* RealmSwift.framework */,
 				10A55BBB207A099A00C8E8C8 /* Reachability.framework */,
@@ -396,6 +403,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Reachability.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RepositoryTool.framework",
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Result.framework",
@@ -403,6 +411,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Reachability.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Realm.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RealmSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RepositoryTool.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -443,6 +452,7 @@
 				10A55BAF2079F03F00C8E8C8 /* iTunesSearchRequest.swift in Sources */,
 				10D4137F207A47A0004977AB /* ArtworkResponseError.swift in Sources */,
 				10D4137D207A460B004977AB /* RequestError.swift in Sources */,
+				10AE65DF208278060072DF6C /* ArtworkRepository.swift in Sources */,
 				1061B51120641363006B75E6 /* ViewController.swift in Sources */,
 				10A55BB12079F14500C8E8C8 /* iTunesSearchAPI.swift in Sources */,
 				1050CAB9207A673800F5B554 /* RealmDaoHelper.swift in Sources */,
