@@ -131,6 +131,14 @@ class ArtworkDaoTests: XCTestCase {
         let result = ArtworkDao.find(by: predicate)
         XCTAssertEqual(result.count, expected)
     }
+    func testFindURL(){
+        let expected = (count: 1, image: UIImage(named: "snow.jpg"))
+        threeArtworks.forEach({ArtworkDao.add(model:$0)})
+        let predicate = NSPredicate(format: "url CONTAINS '2.example.com'")
+        let result = ArtworkDao.find(by: predicate)
+        XCTAssertEqual(result.count, expected.count)
+        compareJpegImage(lhs: result[0].image, rhs: expected.image)
+    }
 }
 extension ArtworkDaoTests {
     func verifyFirstItem(expectedId: Int, expectedUrl: String,
@@ -169,7 +177,7 @@ extension ArtworkDaoTests {
         let object3 = ArtworkDto()
         object3.id = 3
         object3.url = "https://3.example.com"
-        object3.image = UIImage(named: "sparerib.jpg")
+        object3.image = UIImage(named: "spareribs.jpg")
         
         return [object1, object2, object3]
     }
