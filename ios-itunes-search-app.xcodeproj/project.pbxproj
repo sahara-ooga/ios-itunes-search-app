@@ -29,6 +29,9 @@
 		10916ACD208335FD0081888C /* ITunesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10916ACC208335FD0081888C /* ITunesCell.swift */; };
 		10916ACF20834F460081888C /* EmptyResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10916ACE20834F460081888C /* EmptyResultVC.swift */; };
 		10916AD120834F770081888C /* SearchResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10916AD020834F770081888C /* SearchResultVC.swift */; };
+		10916AD320834FD10081888C /* SearchResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10916AD220834FD10081888C /* SearchResultViewModel.swift */; };
+		10916AD6208350120081888C /* EmptyResultVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10916AD5208350120081888C /* EmptyResultVC.storyboard */; };
+		10916AD82083502D0081888C /* SearchResultVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10916AD72083502D0081888C /* SearchResultVC.storyboard */; };
 		10A55B9C2079DF8D00C8E8C8 /* iTunesSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A55B9B2079DF8D00C8E8C8 /* iTunesSearchResponse.swift */; };
 		10A55B9F2079E2D600C8E8C8 /* iTunesResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 10A55B9E2079E2D600C8E8C8 /* iTunesResponse.json */; };
 		10A55BA02079E2D600C8E8C8 /* iTunesResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 10A55B9E2079E2D600C8E8C8 /* iTunesResponse.json */; };
@@ -95,6 +98,9 @@
 		10916ACC208335FD0081888C /* ITunesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesCell.swift; sourceTree = "<group>"; };
 		10916ACE20834F460081888C /* EmptyResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResultVC.swift; sourceTree = "<group>"; };
 		10916AD020834F770081888C /* SearchResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultVC.swift; sourceTree = "<group>"; };
+		10916AD220834FD10081888C /* SearchResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewModel.swift; sourceTree = "<group>"; };
+		10916AD5208350120081888C /* EmptyResultVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmptyResultVC.storyboard; sourceTree = "<group>"; };
+		10916AD72083502D0081888C /* SearchResultVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchResultVC.storyboard; sourceTree = "<group>"; };
 		10A55B9B2079DF8D00C8E8C8 /* iTunesSearchResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunesSearchResponse.swift; sourceTree = "<group>"; };
 		10A55B9E2079E2D600C8E8C8 /* iTunesResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = iTunesResponse.json; sourceTree = "<group>"; };
 		10A55BA22079E42A00C8E8C8 /* XCTest+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+Utils.swift"; sourceTree = "<group>"; };
@@ -184,6 +190,7 @@
 				10A55B9A2079DF5300C8E8C8 /* Model */,
 				10A55B992079DF3500C8E8C8 /* View・VC */,
 				10A55B982079DF0400C8E8C8 /* Support Files */,
+				10916AD420834FD90081888C /* ViewModel */,
 			);
 			path = "ios-itunes-search-app";
 			sourceTree = "<group>";
@@ -215,6 +222,14 @@
 			path = Documents;
 			sourceTree = "<group>";
 		};
+		10916AD420834FD90081888C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				10916AD220834FD10081888C /* SearchResultViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
 		10A55B982079DF0400C8E8C8 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +248,8 @@
 				10916ACC208335FD0081888C /* ITunesCell.swift */,
 				10916ACE20834F460081888C /* EmptyResultVC.swift */,
 				10916AD020834F770081888C /* SearchResultVC.swift */,
+				10916AD5208350120081888C /* EmptyResultVC.storyboard */,
+				10916AD72083502D0081888C /* SearchResultVC.storyboard */,
 			);
 			name = "View・VC";
 			sourceTree = "<group>";
@@ -398,6 +415,8 @@
 				10A55B9F2079E2D600C8E8C8 /* iTunesResponse.json in Resources */,
 				10457EB72082512500E938BD /* snow.jpg in Resources */,
 				1061B51420641363006B75E6 /* Main.storyboard in Resources */,
+				10916AD82083502D0081888C /* SearchResultVC.storyboard in Resources */,
+				10916AD6208350120081888C /* EmptyResultVC.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +498,7 @@
 				1061B51120641363006B75E6 /* RootVC.swift in Sources */,
 				10A55BB12079F14500C8E8C8 /* iTunesSearchAPI.swift in Sources */,
 				10AE65E120827B140072DF6C /* Artwork.swift in Sources */,
+				10916AD320834FD10081888C /* SearchResultViewModel.swift in Sources */,
 				1050CAB9207A673800F5B554 /* RealmDaoHelper.swift in Sources */,
 				1050CABB207A67F800F5B554 /* ArtworkDto.swift in Sources */,
 				10A55B9C2079DF8D00C8E8C8 /* iTunesSearchResponse.swift in Sources */,
