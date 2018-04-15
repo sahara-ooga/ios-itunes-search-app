@@ -25,16 +25,27 @@
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7g0-oc-JeK">
+                                <rect key="frame" x="0.0" y="114" width="375" height="553"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7g0-oc-JeK" secondAttribute="trailing" id="0ty-fU-f7j"/>
+                            <constraint firstItem="7g0-oc-JeK" firstAttribute="top" secondItem="wbh-H6-CNR" secondAttribute="bottom" id="GeW-Qc-uax"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7g0-oc-JeK" secondAttribute="bottom" id="LFg-EN-UMs"/>
                             <constraint firstItem="wbh-H6-CNR" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="MxO-aN-f21"/>
                             <constraint firstItem="wbh-H6-CNR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Nsf-mf-A9W"/>
+                            <constraint firstItem="7g0-oc-JeK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rw0-2a-lit"/>
                             <constraint firstItem="wbh-H6-CNR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vIH-Je-fHk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="音楽検索" id="vtg-HI-5H5"/>
+                    <connections>
+                        <outlet property="resultView" destination="7g0-oc-JeK" id="vTk-Dr-aax"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

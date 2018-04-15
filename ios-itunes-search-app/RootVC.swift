@@ -9,6 +9,7 @@
 import UIKit
 
 class RootVC: UIViewController {
+    @IBOutlet weak var resultView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()

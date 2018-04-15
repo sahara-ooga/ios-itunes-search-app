@@ -10,11 +10,20 @@ import UIKit
 
 class ITunesCell: UITableViewCell {
     static var identifier: String {
-        get {
-            return String(describing: self)
+        return String(describing: self)
+    }
+    @IBOutlet weak var artworkView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    var itunesTrack: iTunesTrack? {
+        didSet {
+            titleLabel.text = itunesTrack?.trackName
         }
     }
-    
+    var artwork: Artwork? {
+        didSet {
+            artworkView.image = artwork?.image
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
