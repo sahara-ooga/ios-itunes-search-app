@@ -230,11 +230,69 @@
 			name = ViewModel;
 			sourceTree = "<group>";
 		};
+		10916AD92083706B0081888C /* RootVC */ = {
+			isa = PBXGroup;
+			children = (
+				1061B51020641363006B75E6 /* RootVC.swift */,
+				1061B51220641363006B75E6 /* Main.storyboard */,
+			);
+			name = RootVC;
+			sourceTree = "<group>";
+		};
+		10916ADA208370760081888C /* EmptyVC */ = {
+			isa = PBXGroup;
+			children = (
+				10916ACE20834F460081888C /* EmptyResultVC.swift */,
+				10916AD5208350120081888C /* EmptyResultVC.storyboard */,
+			);
+			name = EmptyVC;
+			sourceTree = "<group>";
+		};
+		10916ADB208370850081888C /* SearchResultVC */ = {
+			isa = PBXGroup;
+			children = (
+				10916AD020834F770081888C /* SearchResultVC.swift */,
+				10916AD72083502D0081888C /* SearchResultVC.storyboard */,
+				10916ACC208335FD0081888C /* ITunesCell.swift */,
+			);
+			name = SearchResultVC;
+			sourceTree = "<group>";
+		};
+		10916ADC208370C30081888C /* iTunesRepository */ = {
+			isa = PBXGroup;
+			children = (
+				10A55B9B2079DF8D00C8E8C8 /* iTunesSearchResponse.swift */,
+				10A55BB72079FFCD00C8E8C8 /* iTunesSearchAPIClient.swift */,
+				1011B7D92083121B00AAE928 /* iTunesRepository.swift */,
+			);
+			name = iTunesRepository;
+			sourceTree = "<group>";
+		};
+		10916ADD208370D90081888C /* ArtworkRepository */ = {
+			isa = PBXGroup;
+			children = (
+				10AE65E020827B140072DF6C /* Artwork.swift */,
+				10D4137A207A44F1004977AB /* ArtworkClient.swift */,
+				10AE65DE208278060072DF6C /* ArtworkRepository.swift */,
+			);
+			name = ArtworkRepository;
+			sourceTree = "<group>";
+		};
+		10916ADE208370F20081888C /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				10A55BBE207A0A6300C8E8C8 /* NetworkUtil.swift */,
+				10B269F7208298D600142AF8 /* DependencyInjectionable.swift */,
+			);
+			name = Others;
+			sourceTree = "<group>";
+		};
 		10A55B982079DF0400C8E8C8 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
 				1061B51520641363006B75E6 /* Assets.xcassets */,
 				1061B51A20641363006B75E6 /* Info.plist */,
+				1061B51720641363006B75E6 /* LaunchScreen.storyboard */,
 			);
 			name = "Support Files";
 			sourceTree = "<group>";
@@ -242,14 +300,9 @@
 		10A55B992079DF3500C8E8C8 /* View・VC */ = {
 			isa = PBXGroup;
 			children = (
-				1061B51020641363006B75E6 /* RootVC.swift */,
-				1061B51220641363006B75E6 /* Main.storyboard */,
-				1061B51720641363006B75E6 /* LaunchScreen.storyboard */,
-				10916ACC208335FD0081888C /* ITunesCell.swift */,
-				10916ACE20834F460081888C /* EmptyResultVC.swift */,
-				10916AD020834F770081888C /* SearchResultVC.swift */,
-				10916AD5208350120081888C /* EmptyResultVC.storyboard */,
-				10916AD72083502D0081888C /* SearchResultVC.storyboard */,
+				10916AD92083706B0081888C /* RootVC */,
+				10916ADA208370760081888C /* EmptyVC */,
+				10916ADB208370850081888C /* SearchResultVC */,
 			);
 			name = "View・VC";
 			sourceTree = "<group>";
@@ -260,14 +313,9 @@
 				1050CAB7207A66ED00F5B554 /* Realm */,
 				10D41382207A5145004977AB /* Error */,
 				10A55BAB2079EEDC00C8E8C8 /* APIKit */,
-				10A55B9B2079DF8D00C8E8C8 /* iTunesSearchResponse.swift */,
-				10A55BB72079FFCD00C8E8C8 /* iTunesSearchAPIClient.swift */,
-				10A55BBE207A0A6300C8E8C8 /* NetworkUtil.swift */,
-				10D4137A207A44F1004977AB /* ArtworkClient.swift */,
-				10B269F7208298D600142AF8 /* DependencyInjectionable.swift */,
-				10AE65DE208278060072DF6C /* ArtworkRepository.swift */,
-				10AE65E020827B140072DF6C /* Artwork.swift */,
-				1011B7D92083121B00AAE928 /* iTunesRepository.swift */,
+				10916ADC208370C30081888C /* iTunesRepository */,
+				10916ADD208370D90081888C /* ArtworkRepository */,
+				10916ADE208370F20081888C /* Others */,
 			);
 			name = Model;
 			sourceTree = "<group>";
