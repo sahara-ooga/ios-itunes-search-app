@@ -25,7 +25,8 @@ struct iTunesSearchAPIClient {
     init(dependency: Dependency) {
         self.dependency = dependency
     }
-    
+}
+extension iTunesSearchAPIClient: iTunesSearchAPIClientProtocol {
     func searchTracks(query: String,
                      limit: Int = 50,
                      completion: @escaping (Result<iTunesSearchResponse, APIKit.SessionTaskError>) -> Void) {

@@ -26,6 +26,7 @@
 		1061B51620641363006B75E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1061B51520641363006B75E6 /* Assets.xcassets */; };
 		1061B51920641363006B75E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1061B51720641363006B75E6 /* LaunchScreen.storyboard */; };
 		1061B52420641363006B75E6 /* iTunesSearchResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1061B52320641363006B75E6 /* iTunesSearchResultTests.swift */; };
+		108FA9AA20837EAE0054C9D3 /* VC+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108FA9A920837EAE0054C9D3 /* VC+Util.swift */; };
 		10916ACD208335FD0081888C /* ITunesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10916ACC208335FD0081888C /* ITunesCell.swift */; };
 		10916ACF20834F460081888C /* EmptyResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10916ACE20834F460081888C /* EmptyResultVC.swift */; };
 		10916AD120834F770081888C /* SearchResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10916AD020834F770081888C /* SearchResultVC.swift */; };
@@ -95,6 +96,7 @@
 		1061B52520641363006B75E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1061B52F2064140A006B75E6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1061B53020641441006B75E6 /* APIRequest&Response.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "APIRequest&Response.md"; sourceTree = "<group>"; };
+		108FA9A920837EAE0054C9D3 /* VC+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC+Util.swift"; sourceTree = "<group>"; };
 		10916ACC208335FD0081888C /* ITunesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesCell.swift; sourceTree = "<group>"; };
 		10916ACE20834F460081888C /* EmptyResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResultVC.swift; sourceTree = "<group>"; };
 		10916AD020834F770081888C /* SearchResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultVC.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 				10916AD92083706B0081888C /* RootVC */,
 				10916ADA208370760081888C /* EmptyVC */,
 				10916ADB208370850081888C /* SearchResultVC */,
+				108FA9A920837EAE0054C9D3 /* VC+Util.swift */,
 			);
 			name = "View・VC";
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 			files = (
 				10B269F8208298D600142AF8 /* DependencyInjectionable.swift in Sources */,
 				10A55BC3207A0EF900C8E8C8 /* ConnectionError.swift in Sources */,
+				108FA9AA20837EAE0054C9D3 /* VC+Util.swift in Sources */,
 				10D4137B207A44F2004977AB /* ArtworkClient.swift in Sources */,
 				10A55BAF2079F03F00C8E8C8 /* iTunesSearchRequest.swift in Sources */,
 				10D4137F207A47A0004977AB /* ArtworkResponseError.swift in Sources */,

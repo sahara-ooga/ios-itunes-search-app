@@ -15,6 +15,10 @@ protocol SearchResultDelegate: class {
     func didReceive(index: Int, artwork: Artwork)
     func didReceive(error: APIKit.SessionTaskError)
 }
+protocol SearchResultVMProtocol {
+    func search(query: String, limit: Int)
+    func fetchArtwork(from url:String, track: iTunesTrack)
+}
 final class SearchResultViewModel: DependencyInjectionable {
     typealias Dependency = (iTunesRepo: iTunesRepositoryProtocol,
                             artworkRepo: ArtworkRepositoryProtocol)
@@ -27,8 +31,8 @@ final class SearchResultViewModel: DependencyInjectionable {
         self.dependency = dependency
     }
 }
-extension SearchResultViewModel {
-    func search(query: String,limit: Int = 50) -> Void {
+extension SearchResultViewModel: SearchResultVMProtocol {
+    func search(query: String,limit: Int = 50) {
         let iRepo = dependency.iTunesRepo
         iRepo.search(query: query,
                      limit: limit) { [weak self] result in

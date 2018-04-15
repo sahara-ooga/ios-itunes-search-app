@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import APIKit
 
 class RootVC: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var resultView: UIView!
-
+    var searchResultViewModel: SearchResultVMProtocol!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpViewModel()
         setUpSearchBar()
     }
 
@@ -23,6 +26,42 @@ class RootVC: UIViewController {
     }
 
 
+}
+extension RootVC: SearchResultDelegate {
+    func setUpViewModel() {
+        let apiClient = iTunesSearchAPIClient(dependency: NetworkUtil())
+        let iTunesRepo = iTunesRepository(dependency: (apiClient))
+        let artworkRepo = ArtworkRepository(dependency: ArtworkClient(dependency: (NetworkUtil())))
+        let searchResultViewModel = SearchResultViewModel(dependency: (iTunesRepo: iTunesRepo,
+                                                                        artworkRepo: artworkRepo))
+        searchResultViewModel.delegate = self
+        self.searchResultViewModel = searchResultViewModel
+    }
+    func didReceive(tracks: [iTunesTrack]) {
+        if tracks.isEmpty {
+            //空なら、EmptyVCを表示する
+            let storyboard = UIStoryboard(name: EmptyResultVC.identifier, bundle: nil)
+            let emptyVC = storyboard.instantiateInitialViewController() as! EmptyResultVC
+            self.resultView.addSubview(emptyVC.view)
+        } else {
+            //検索結果のVCを表示する
+            let storyboard = UIStoryboard(name: SearchResultVC.identifier,
+                                          bundle: nil)
+            let searchResultVC = storyboard.instantiateInitialViewController() as! SearchResultVC
+            //VCの整備
+            searchResultVC.tracks = tracks
+            //表示
+            self.resultView.addSubview(searchResultVC.view)
+        }
+    }
+    
+    func didReceive(index: Int, artwork: Artwork) {
+        //TODO: 後でやる
+    }
+    
+    func didReceive(error: SessionTaskError) {
+        // TODO: 後でやる
+    }
 }
 // MARK: Search Bar
 extension RootVC {
@@ -36,8 +75,11 @@ extension RootVC: UISearchBarDelegate {
     /// 検索をクリックしたときに呼ばれる
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         print(#function)
-        if let searchText = searchBar.text {
-            print("searchText:\(searchText)")
+        if let searchBarText = searchBar.text {
+            print("searchText:\(searchBarText)")
+            //空白は+に置換
+            let searchText = searchBarText.replacingOccurrences(of: " ", with: "+")
+            self.searchResultViewModel.search(query: searchText, limit: 5)
         }
     }
     /// サーチバーの中身が更新されるときに呼ばれる
