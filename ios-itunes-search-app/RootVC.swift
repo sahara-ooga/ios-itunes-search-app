@@ -16,6 +16,7 @@ class RootVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpVCs()
         setUpViewModel()
         setUpSearchBar()
     }
@@ -39,23 +40,41 @@ extension RootVC {
 }
 // MARK: - Display View Controller(s)
 extension RootVC {
-    func display(vc: DestinationVC, tracks: [iTunesTrack]) {
-        switch vc {
-        case .empty:
-            //空なら、EmptyVCを表示する
+    func setUpVCs() {
+        do {
+            //EmptyVCをセットする
             let storyboard = UIStoryboard(name: EmptyResultVC.identifier,
                                           bundle: nil)
             let emptyVC = storyboard.instantiateInitialViewController() as! EmptyResultVC
+            emptyVC.view.isHidden = true
+            self.addChildViewController(emptyVC)
             self.resultView.addSubview(emptyVC.view)
-        case .searchResult:
-            //検索結果のVCを表示する
+        }
+        do {
+            //検索結果のVCをセットする
             let storyboard = UIStoryboard(name: SearchResultVC.identifier,
                                           bundle: nil)
             let searchResultVC = storyboard.instantiateInitialViewController() as! SearchResultVC
-            //VCの整備
-            searchResultVC.tracks = tracks
-            //表示
+            searchResultVC.view.isHidden = true
+            self.addChildViewController(searchResultVC)
             self.resultView.addSubview(searchResultVC.view)
+        }
+    }
+    func display(vc: DestinationVC, tracks: [iTunesTrack]) {
+        switch vc {
+        case .empty:
+            let emptyView = self.resultView.subviews.first
+            let searchResultView = self.resultView.subviews[1]
+            emptyView?.isHidden = false
+            searchResultView.isHidden = true
+        case .searchResult:
+            let searchResultVC = self.childViewControllers[1] as! SearchResultVC
+            searchResultVC.tracks = tracks
+            let emptyView = self.resultView.subviews.first
+            let searchResultView = self.resultView.subviews[1]
+            emptyView?.isHidden = true
+            searchResultView.isHidden = false
+            searchResultVC.tableView.reloadData()
         }
     }
 }
@@ -73,7 +92,12 @@ extension RootVC: SearchResultDelegate {
     func didReceive(error: SessionTaskError) {
         //TODO: 後でやる
         //TODO: 通信エラー時のアラート表示への導線を引く
-        
+//        switch error {
+//        case .connectionError(let error):
+//            //アラートを表示する
+//        default:
+//            <#code#>
+//        }
     }
 }
 // MARK: Search Bar

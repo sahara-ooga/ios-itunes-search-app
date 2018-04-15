@@ -34,7 +34,9 @@ extension SearchResultVC: UITableViewDataSource {
                                  for: indexPath) as? ITunesCell else {
                                     fatalError("ITunesCellが取得できない。")
         }
-        cell.itunesTrack = tracks[indexPath.row]
+        if !tracks.isEmpty {
+            cell.itunesTrack = tracks[indexPath.row]
+        }
         return cell
     }
 }
