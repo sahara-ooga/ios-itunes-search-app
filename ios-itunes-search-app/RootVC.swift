@@ -9,11 +9,12 @@
 import UIKit
 
 class RootVC: UIViewController {
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var resultView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        setUpSearchBar()
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,4 +24,33 @@ class RootVC: UIViewController {
 
 
 }
-
+// MARK: Search Bar
+extension RootVC {
+    func setUpSearchBar() {
+        searchBar.delegate = self
+        searchBar.showsCancelButton = true
+        searchBar.keyboardType = .default
+    }
+}
+extension RootVC: UISearchBarDelegate {
+    /// 検索をクリックしたときに呼ばれる
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print(#function)
+        if let searchText = searchBar.text {
+            print("searchText:\(searchText)")
+        }
+    }
+    /// サーチバーの中身が更新されるときに呼ばれる
+    /// 日本語入力の場合、確定ボタンを押す・文字を削除するタイミングで呼ばれる
+    func searchBar(_ searchBar: UISearchBar,
+                   textDidChange searchText: String) {
+        print(#function)
+        print(searchText)
+    }
+    /// キャンセルボタンをクリックしたときに呼ばれる
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        print(#function)
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+    }
+}

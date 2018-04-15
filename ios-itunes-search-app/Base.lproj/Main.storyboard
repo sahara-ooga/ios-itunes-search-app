@@ -45,6 +45,7 @@
                     <navigationItem key="navigationItem" title="音楽検索" id="vtg-HI-5H5"/>
                     <connections>
                         <outlet property="resultView" destination="7g0-oc-JeK" id="vTk-Dr-aax"/>
+                        <outlet property="searchBar" destination="wbh-H6-CNR" id="p56-Gx-3X2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
