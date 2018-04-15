@@ -45,3 +45,7 @@ extension ArtworkDto {
         }
     }
 }
+
+extension ArtworkDto: DtoProtocol {
+    
+}

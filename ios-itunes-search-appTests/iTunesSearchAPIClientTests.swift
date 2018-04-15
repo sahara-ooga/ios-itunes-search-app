@@ -36,7 +36,6 @@ class iTunesSearchAPIClientTests: XCTestCase {
                                                                    expectResultCount)
                                                     expectation.fulfill()
         }
-        
         wait(for:[expectation],timeout:30.0)
     }
     /// iTunesSearchAPIClientの、通信不可能時の挙動を試す

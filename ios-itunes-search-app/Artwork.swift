@@ -9,12 +9,11 @@
 import UIKit
 import RepositoryTool
 
-struct Artwork: RepositoryElement {
-    typealias Identifier = Int
+struct Artwork {
     let id: Int
     let url: String
     let image: UIImage?
-    
+
     init(from dto: ArtworkDto) {
         self.id = dto.id
         self.url = dto.url

@@ -10,7 +10,11 @@ import UIKit
 import Result
 import APIKit
 
-struct ArtworkClient {
+protocol ImageDownloadable {
+    func downloadImage(url: String,
+                       completion: @escaping (Result<UIImage, APIKit.SessionTaskError>) -> Void)
+}
+struct ArtworkClient: DependencyInjectionable, ImageDownloadable {
     // MARK: DI
     typealias Dependency = (
         ConnnectibityCheckable

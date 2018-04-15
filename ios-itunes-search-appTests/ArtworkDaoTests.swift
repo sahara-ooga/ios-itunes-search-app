@@ -33,7 +33,7 @@ class ArtworkDaoTests: XCTestCase {
                         expectedUrl: expectedUrl,
                         expectedImage: expectedImage)
     }
-    func testFindItem() {
+    func testFindItemById() {
         var expected = (id: 1,
                         url: "expected url",
                         image: UIImage(named: "spareribs.jpg"))
@@ -140,7 +140,7 @@ class ArtworkDaoTests: XCTestCase {
         compareJpegImage(lhs: result[0].image, rhs: expected.image)
     }
 }
-extension ArtworkDaoTests {
+extension XCTestCase {
     func verifyFirstItem(expectedId: Int, expectedUrl: String,
                             expectedImage: UIImage?) {
         
