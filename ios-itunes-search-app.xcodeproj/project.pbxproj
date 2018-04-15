@@ -21,7 +21,7 @@
 		1050CABB207A67F800F5B554 /* ArtworkDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050CABA207A67F800F5B554 /* ArtworkDto.swift */; };
 		1050CABD207A68BC00F5B554 /* ArtworkDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050CABC207A68BC00F5B554 /* ArtworkDao.swift */; };
 		1061B50F20641363006B75E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1061B50E20641363006B75E6 /* AppDelegate.swift */; };
-		1061B51120641363006B75E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1061B51020641363006B75E6 /* ViewController.swift */; };
+		1061B51120641363006B75E6 /* RootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1061B51020641363006B75E6 /* RootVC.swift */; };
 		1061B51420641363006B75E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1061B51220641363006B75E6 /* Main.storyboard */; };
 		1061B51620641363006B75E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1061B51520641363006B75E6 /* Assets.xcassets */; };
 		1061B51920641363006B75E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1061B51720641363006B75E6 /* LaunchScreen.storyboard */; };
@@ -80,7 +80,7 @@
 		1050CABC207A68BC00F5B554 /* ArtworkDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkDao.swift; sourceTree = "<group>"; };
 		1061B50B20641363006B75E6 /* ios-itunes-search-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-itunes-search-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1061B50E20641363006B75E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1061B51020641363006B75E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1061B51020641363006B75E6 /* RootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootVC.swift; sourceTree = "<group>"; };
 		1061B51320641363006B75E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1061B51520641363006B75E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1061B51820641363006B75E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -223,7 +223,7 @@
 		10A55B992079DF3500C8E8C8 /* View・VC */ = {
 			isa = PBXGroup;
 			children = (
-				1061B51020641363006B75E6 /* ViewController.swift */,
+				1061B51020641363006B75E6 /* RootVC.swift */,
 				1061B51220641363006B75E6 /* Main.storyboard */,
 				1061B51720641363006B75E6 /* LaunchScreen.storyboard */,
 				10916ACC208335FD0081888C /* ITunesCell.swift */,
@@ -469,7 +469,7 @@
 				10D4137D207A460B004977AB /* RequestError.swift in Sources */,
 				10AE65DF208278060072DF6C /* ArtworkRepository.swift in Sources */,
 				10916ACD208335FD0081888C /* ITunesCell.swift in Sources */,
-				1061B51120641363006B75E6 /* ViewController.swift in Sources */,
+				1061B51120641363006B75E6 /* RootVC.swift in Sources */,
 				10A55BB12079F14500C8E8C8 /* iTunesSearchAPI.swift in Sources */,
 				10AE65E120827B140072DF6C /* Artwork.swift in Sources */,
 				1050CAB9207A673800F5B554 /* RealmDaoHelper.swift in Sources */,

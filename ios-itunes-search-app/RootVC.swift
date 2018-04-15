@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RootVC.swift
 //  ios-itunes-search-app
 //
 //  Created by yogasawara@stv on 2018/03/23.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class RootVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
