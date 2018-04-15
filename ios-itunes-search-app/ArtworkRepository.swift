@@ -14,7 +14,7 @@ protocol ArtworkRepositoryProtocol {
     func artwork(in url:String,
                  completion: @escaping (Result<Artwork, APIKit.SessionTaskError>) -> Void) -> Void
 }
-class ArtworkRepository: ArtworkRepositoryProtocol,DependencyInjectionable {
+final class ArtworkRepository: ArtworkRepositoryProtocol,DependencyInjectionable {
 
     typealias Dependency = (ImageDownloadable)
     var dependency: (ImageDownloadable)

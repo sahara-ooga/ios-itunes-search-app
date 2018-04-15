@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1011B7DA2083121B00AAE928 /* iTunesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1011B7D92083121B00AAE928 /* iTunesRepository.swift */; };
+		1011B7DC2083192B00AAE928 /* iTunesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1011B7DB2083192B00AAE928 /* iTunesRepositoryTests.swift */; };
 		10457EAE2082420100E938BD /* ArtworkDtoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10457EAD2082420100E938BD /* ArtworkDtoTests.swift */; };
 		10457EB0208243CB00E938BD /* ArtworkDaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10457EAF208243CB00E938BD /* ArtworkDaoTests.swift */; };
 		10457EB4208250F600E938BD /* spareribs.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10457EB3208250F600E938BD /* spareribs.jpg */; };
@@ -64,6 +66,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1011B7D92083121B00AAE928 /* iTunesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesRepository.swift; sourceTree = "<group>"; };
+		1011B7DB2083192B00AAE928 /* iTunesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = iTunesRepositoryTests.swift; path = "ios-itunes-search-appTests/iTunesRepositoryTests.swift"; sourceTree = SOURCE_ROOT; };
 		10457EAD2082420100E938BD /* ArtworkDtoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkDtoTests.swift; sourceTree = "<group>"; };
 		10457EAF208243CB00E938BD /* ArtworkDaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkDaoTests.swift; sourceTree = "<group>"; };
 		10457EB3208250F600E938BD /* spareribs.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = spareribs.jpg; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 				10A55B9D2079E27800C8E8C8 /* Resources */,
 				10A55BA12079E3C600C8E8C8 /* Support Files */,
 				1061B52320641363006B75E6 /* iTunesSearchResultTests.swift */,
+				1011B7DB2083192B00AAE928 /* iTunesRepositoryTests.swift */,
 				10A55BB22079F2F200C8E8C8 /* iTunesSearchAPITests.swift */,
 				10A55BB9207A037B00C8E8C8 /* iTunesSearchAPIClientTests.swift */,
 				10A55BC0207A0A9000C8E8C8 /* NetworkUtilTests.swift */,
@@ -236,6 +241,7 @@
 				10B269F7208298D600142AF8 /* DependencyInjectionable.swift */,
 				10AE65DE208278060072DF6C /* ArtworkRepository.swift */,
 				10AE65E020827B140072DF6C /* Artwork.swift */,
+				1011B7D92083121B00AAE928 /* iTunesRepository.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -467,6 +473,7 @@
 				10A55B9C2079DF8D00C8E8C8 /* iTunesSearchResponse.swift in Sources */,
 				10A55BBF207A0A6300C8E8C8 /* NetworkUtil.swift in Sources */,
 				1050CABD207A68BC00F5B554 /* ArtworkDao.swift in Sources */,
+				1011B7DA2083121B00AAE928 /* iTunesRepository.swift in Sources */,
 				10A55BB82079FFCD00C8E8C8 /* iTunesSearchAPIClient.swift in Sources */,
 				10A55BAD2079EF6500C8E8C8 /* DecodableDataParser.swift in Sources */,
 				1061B50F20641363006B75E6 /* AppDelegate.swift in Sources */,
@@ -482,6 +489,7 @@
 				10A55BA42079E42A00C8E8C8 /* XCTest+Utils.swift in Sources */,
 				10A55BC1207A0A9000C8E8C8 /* NetworkUtilTests.swift in Sources */,
 				10457EAE2082420100E938BD /* ArtworkDtoTests.swift in Sources */,
+				1011B7DC2083192B00AAE928 /* iTunesRepositoryTests.swift in Sources */,
 				10B269FE2082ED5D00142AF8 /* ArtworkRepositoryTests.swift in Sources */,
 				10D41381207A4A04004977AB /* ArtworkClientTests.swift in Sources */,
 				10A55BBA207A037B00C8E8C8 /* iTunesSearchAPIClientTests.swift in Sources */,

@@ -40,14 +40,23 @@ extension XCTestCase {
         let jsonData = try? Data(contentsOf: URL(fileURLWithPath: jsonPath!))
         return try! JSONSerialization.jsonObject(with: jsonData!, options: []) as! [[String: AnyObject]]
     }
-    
-//    static func credentialsFor(_ provider: String) -> (email: String, password: String) {
-//        let json = jsonFromFile("provider_credentials")
-//
-//        guard let providerInfo = json[provider] as? [String: String] else { fatalError("\(provider) isn't in provider.json") }
-//        guard let email = providerInfo["email"] else { fatalError("email not present for \(provider)") }
-//        guard let password = providerInfo["password"] else { fatalError("password not \(provider)") }
-//
-//        return (email, password)
-//    }
+}
+extension XCTestCase {
+    static func logPrint(strings:String...,
+        file:String = #file,
+        line:Int = #line,
+        column:Int = #column,
+        function:String = #function){
+        print("logPrint>>>>>>>>>>>>>>>>>>>>>>")
+        print("file:",file)
+        print("line:",line)
+        print("column:",column)
+        print("function:",function)
+        
+        for string in strings {
+            print(string)
+        }
+        
+        print("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
+    }
 }

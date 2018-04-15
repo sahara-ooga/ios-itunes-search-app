@@ -10,6 +10,11 @@ import Foundation
 import APIKit
 import Result
 
+protocol iTunesSearchAPIClientProtocol {
+    func searchTracks(query: String,
+    limit: Int,
+    completion: @escaping (Result<iTunesSearchResponse, APIKit.SessionTaskError>) -> Void)
+}
 struct iTunesSearchAPIClient {
     // MARK: DI
     typealias Dependency = (
