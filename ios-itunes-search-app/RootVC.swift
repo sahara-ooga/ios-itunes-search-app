@@ -24,26 +24,30 @@ class RootVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
-extension RootVC: SearchResultDelegate {
+// MARK: - ViewModel
+extension RootVC {
     func setUpViewModel() {
         let apiClient = iTunesSearchAPIClient(dependency: NetworkUtil())
         let iTunesRepo = iTunesRepository(dependency: (apiClient))
         let artworkRepo = ArtworkRepository(dependency: ArtworkClient(dependency: (NetworkUtil())))
         let searchResultViewModel = SearchResultViewModel(dependency: (iTunesRepo: iTunesRepo,
-                                                                        artworkRepo: artworkRepo))
+                                                                       artworkRepo: artworkRepo))
         searchResultViewModel.delegate = self
         self.searchResultViewModel = searchResultViewModel
     }
-    func didReceive(tracks: [iTunesTrack]) {
-        if tracks.isEmpty {
+}
+// MARK: - Display View Controller(s)
+extension RootVC {
+    func display(vc: DestinationVC, tracks: [iTunesTrack]) {
+        switch vc {
+        case .empty:
             //空なら、EmptyVCを表示する
-            let storyboard = UIStoryboard(name: EmptyResultVC.identifier, bundle: nil)
+            let storyboard = UIStoryboard(name: EmptyResultVC.identifier,
+                                          bundle: nil)
             let emptyVC = storyboard.instantiateInitialViewController() as! EmptyResultVC
             self.resultView.addSubview(emptyVC.view)
-        } else {
+        case .searchResult:
             //検索結果のVCを表示する
             let storyboard = UIStoryboard(name: SearchResultVC.identifier,
                                           bundle: nil)
@@ -54,13 +58,22 @@ extension RootVC: SearchResultDelegate {
             self.resultView.addSubview(searchResultVC.view)
         }
     }
-    
+}
+extension RootVC: SearchResultDelegate {
+    func didReceive(tracks: [iTunesTrack]) {
+        if tracks.isEmpty {
+            display(vc: .empty, tracks: tracks)
+        } else {
+            display(vc: .searchResult, tracks: tracks)
+        }
+    }
     func didReceive(index: Int, artwork: Artwork) {
         //TODO: 後でやる
     }
-    
     func didReceive(error: SessionTaskError) {
-        // TODO: 後でやる
+        //TODO: 後でやる
+        //TODO: 通信エラー時のアラート表示への導線を引く
+        
     }
 }
 // MARK: Search Bar
