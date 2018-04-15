@@ -29,9 +29,32 @@ class RootVC: UIViewController {
 // MARK: - ViewModel
 extension RootVC {
     func setUpViewModel() {
+        switch Constants.connectionState {
+        case .nomal:
+            setUpNomalConnectionViewModel()
+        case .noConnection:
+            setUpNoConnectionViewModel()
+        }
+    }
+    func setUpNomalConnectionViewModel() {
         let apiClient = iTunesSearchAPIClient(dependency: NetworkUtil())
         let iTunesRepo = iTunesRepository(dependency: (apiClient))
         let artworkRepo = ArtworkRepository(dependency: ArtworkClient(dependency: (NetworkUtil())))
+        let searchResultViewModel = SearchResultViewModel(dependency: (iTunesRepo: iTunesRepo,
+                                                                       artworkRepo: artworkRepo))
+        searchResultViewModel.delegate = self
+        self.searchResultViewModel = searchResultViewModel
+    }
+    /// 通信不可能時の状況を設定する
+    func setUpNoConnectionViewModel() {
+        struct MockNetworkUtil: ConnnectibityCheckable {
+            func connectivity() -> Connnectibity {
+                return .none
+            }
+        }
+        let apiClient = iTunesSearchAPIClient(dependency: MockNetworkUtil())
+        let iTunesRepo = iTunesRepository(dependency: (apiClient))
+        let artworkRepo = ArtworkRepository(dependency: ArtworkClient(dependency: (MockNetworkUtil())))
         let searchResultViewModel = SearchResultViewModel(dependency: (iTunesRepo: iTunesRepo,
                                                                        artworkRepo: artworkRepo))
         searchResultViewModel.delegate = self
@@ -90,14 +113,19 @@ extension RootVC: SearchResultDelegate {
         //TODO: 後でやる
     }
     func didReceive(error: SessionTaskError) {
-        //TODO: 後でやる
-        //TODO: 通信エラー時のアラート表示への導線を引く
-//        switch error {
-//        case .connectionError(let error):
-//            //アラートを表示する
-//        default:
-//            <#code#>
-//        }
+        //通信エラー時のアラート表示への導線を引く
+        switch error {
+        case .connectionError(let error):
+            if case ConnectionError.noConnection = error {
+                //通信出来ない際のアラートを表示する
+                let noConnectionAlert = Constants.Alert.noConnection
+                showOKAlert(title: noConnectionAlert.title,
+                            message: noConnectionAlert.message,
+                            okButtonHandler: { _ in return })
+            }
+        default:
+            NSObject.logPrint("An error happened.")
+        }
     }
 }
 // MARK: Search Bar
@@ -111,7 +139,6 @@ extension RootVC {
 extension RootVC: UISearchBarDelegate {
     /// 検索をクリックしたときに呼ばれる
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print(#function)
         if let searchBarText = searchBar.text {
             print("searchText:\(searchBarText)")
             //空白は+に置換
@@ -123,12 +150,10 @@ extension RootVC: UISearchBarDelegate {
     /// 日本語入力の場合、確定ボタンを押す・文字を削除するタイミングで呼ばれる
     func searchBar(_ searchBar: UISearchBar,
                    textDidChange searchText: String) {
-        print(#function)
         print(searchText)
     }
     /// キャンセルボタンをクリックしたときに呼ばれる
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        print(#function)
         searchBar.text = ""
         searchBar.resignFirstResponder()
     }
