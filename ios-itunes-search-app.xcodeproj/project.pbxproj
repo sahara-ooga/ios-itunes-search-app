@@ -27,6 +27,8 @@
 		1061B51920641363006B75E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1061B51720641363006B75E6 /* LaunchScreen.storyboard */; };
 		1061B52420641363006B75E6 /* iTunesSearchResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1061B52320641363006B75E6 /* iTunesSearchResultTests.swift */; };
 		10916ACD208335FD0081888C /* ITunesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10916ACC208335FD0081888C /* ITunesCell.swift */; };
+		10916ACF20834F460081888C /* EmptyResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10916ACE20834F460081888C /* EmptyResultVC.swift */; };
+		10916AD120834F770081888C /* SearchResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10916AD020834F770081888C /* SearchResultVC.swift */; };
 		10A55B9C2079DF8D00C8E8C8 /* iTunesSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A55B9B2079DF8D00C8E8C8 /* iTunesSearchResponse.swift */; };
 		10A55B9F2079E2D600C8E8C8 /* iTunesResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 10A55B9E2079E2D600C8E8C8 /* iTunesResponse.json */; };
 		10A55BA02079E2D600C8E8C8 /* iTunesResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 10A55B9E2079E2D600C8E8C8 /* iTunesResponse.json */; };
@@ -91,6 +93,8 @@
 		1061B52F2064140A006B75E6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1061B53020641441006B75E6 /* APIRequest&Response.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "APIRequest&Response.md"; sourceTree = "<group>"; };
 		10916ACC208335FD0081888C /* ITunesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesCell.swift; sourceTree = "<group>"; };
+		10916ACE20834F460081888C /* EmptyResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResultVC.swift; sourceTree = "<group>"; };
+		10916AD020834F770081888C /* SearchResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultVC.swift; sourceTree = "<group>"; };
 		10A55B9B2079DF8D00C8E8C8 /* iTunesSearchResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunesSearchResponse.swift; sourceTree = "<group>"; };
 		10A55B9E2079E2D600C8E8C8 /* iTunesResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = iTunesResponse.json; sourceTree = "<group>"; };
 		10A55BA22079E42A00C8E8C8 /* XCTest+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+Utils.swift"; sourceTree = "<group>"; };
@@ -227,6 +231,8 @@
 				1061B51220641363006B75E6 /* Main.storyboard */,
 				1061B51720641363006B75E6 /* LaunchScreen.storyboard */,
 				10916ACC208335FD0081888C /* ITunesCell.swift */,
+				10916ACE20834F460081888C /* EmptyResultVC.swift */,
+				10916AD020834F770081888C /* SearchResultVC.swift */,
 			);
 			name = "View・VC";
 			sourceTree = "<group>";
@@ -466,6 +472,7 @@
 				10D4137B207A44F2004977AB /* ArtworkClient.swift in Sources */,
 				10A55BAF2079F03F00C8E8C8 /* iTunesSearchRequest.swift in Sources */,
 				10D4137F207A47A0004977AB /* ArtworkResponseError.swift in Sources */,
+				10916AD120834F770081888C /* SearchResultVC.swift in Sources */,
 				10D4137D207A460B004977AB /* RequestError.swift in Sources */,
 				10AE65DF208278060072DF6C /* ArtworkRepository.swift in Sources */,
 				10916ACD208335FD0081888C /* ITunesCell.swift in Sources */,
@@ -475,6 +482,7 @@
 				1050CAB9207A673800F5B554 /* RealmDaoHelper.swift in Sources */,
 				1050CABB207A67F800F5B554 /* ArtworkDto.swift in Sources */,
 				10A55B9C2079DF8D00C8E8C8 /* iTunesSearchResponse.swift in Sources */,
+				10916ACF20834F460081888C /* EmptyResultVC.swift in Sources */,
 				10A55BBF207A0A6300C8E8C8 /* NetworkUtil.swift in Sources */,
 				1050CABD207A68BC00F5B554 /* ArtworkDao.swift in Sources */,
 				1011B7DA2083121B00AAE928 /* iTunesRepository.swift in Sources */,
