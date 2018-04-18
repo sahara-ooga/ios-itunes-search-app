@@ -13,6 +13,7 @@ class RootVC: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var resultView: UIView!
     var searchResultViewModel: SearchResultVMProtocol!
+    weak var displayArtwork: DisplayArtwork?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,6 +82,7 @@ extension RootVC {
             searchResultVC.view.isHidden = true
             self.addChildViewController(searchResultVC)
             self.resultView.addSubview(searchResultVC.view)
+            self.displayArtwork = searchResultVC
         }
     }
     func display(vc: DestinationVC, tracks: [iTunesTrack]) {
@@ -109,8 +111,10 @@ extension RootVC: SearchResultDelegate {
             display(vc: .searchResult, tracks: tracks)
         }
     }
-    func didReceive(index: Int, artwork: Artwork) {
-        //TODO: 後でやる
+    func didReceive(artwork: Artwork, at index: Int) {
+        DispatchQueue.main.async {
+            self.displayArtwork?.display(artwork: artwork, at: index)
+        }
     }
     func didReceive(error: SessionTaskError) {
         //通信エラー時のアラート表示への導線を引く
@@ -143,7 +147,8 @@ extension RootVC: UISearchBarDelegate {
             print("searchText:\(searchBarText)")
             //空白は+に置換
             let searchText = searchBarText.replacingOccurrences(of: " ", with: "+")
-            self.searchResultViewModel.search(query: searchText, limit: 5)
+            self.searchResultViewModel.search(query: searchText,
+                                              limit: Constants.defaultTrackNum)
         }
     }
     /// サーチバーの中身が更新されるときに呼ばれる

@@ -12,12 +12,13 @@ import APIKit
 
 protocol SearchResultDelegate: class {
     func didReceive(tracks: [iTunesTrack])
-    func didReceive(index: Int, artwork: Artwork)
+    func didReceive(artwork: Artwork, at index: Int)
     func didReceive(error: APIKit.SessionTaskError)
 }
 protocol SearchResultVMProtocol {
     func search(query: String, limit: Int)
-    func fetchArtwork(from url:String, track: iTunesTrack)
+    func fetchArtwork(from searchResult: iTunesSearchResponse)//, onArtwork: (Artwork) -> Void)
+    func fetchArtwork(at index: Int, of track: iTunesTrack)
 }
 final class SearchResultViewModel: DependencyInjectionable {
     typealias Dependency = (iTunesRepo: iTunesRepositoryProtocol,
@@ -32,7 +33,7 @@ final class SearchResultViewModel: DependencyInjectionable {
     }
 }
 extension SearchResultViewModel: SearchResultVMProtocol {
-    func search(query: String,limit: Int = 50) {
+    func search(query: String, limit: Int = 50) {
         let iRepo = dependency.iTunesRepo
         iRepo.search(query: query,
                      limit: limit) { [weak self] result in
@@ -40,27 +41,27 @@ extension SearchResultViewModel: SearchResultVMProtocol {
                         case .success(let itunesResponse):
                             self?.tracks.append(contentsOf: itunesResponse.results)
                             self?.delegate?.didReceive(tracks: itunesResponse.results)
+                            //検索結果を受け取ったら、画像の取得処理を開始する
+//                            itunesResponse.results.enumerated().forEach { (index, track) in
+//                                self?.fetchArtwork(at: index, of : track)
+//                            }
                         case .failure(let error):
                             self?.delegate?.didReceive(error: error)
                         }
         }
     }
-    func fetchArtwork(from url:String, track: iTunesTrack) {
+    func fetchArtwork(from searchResult: iTunesSearchResponse) {
+        searchResult.results.enumerated().forEach { [weak self] (index,track) in
+            self?.fetchArtwork(at: index, of : track)
+        }
+    }
+    func fetchArtwork(at index: Int, of track: iTunesTrack) {
         let artworkRepo = dependency.artworkRepo
-        artworkRepo.artwork(in: url) { [weak self] result in
+        artworkRepo.artwork(in: track.artworkUrl100) { [weak self] result in
             switch result {
             case .success(let artwork):
-                print("TODO: 画像が届いた際の処理")
-                //tracksから対応するセルの番号を取得
-                guard let index = self?.tracks.index(where: { t in
-                    return t.artworkUrl100 == track.artworkUrl100
-                        && t.trackName == track.trackName
-                        && t.artistName == track.artistName
-                }) else {
-                    assertionFailure("URLに対応するトラックがない"); return
-                }
                 //番号とartworkをデリゲートに通知
-                self?.delegate?.didReceive(index: index, artwork: artwork)
+                self?.delegate?.didReceive(artwork: artwork, at: index)
             case .failure(let error):
                 //デリゲートに通知
                 self?.delegate?.didReceive(error: error)

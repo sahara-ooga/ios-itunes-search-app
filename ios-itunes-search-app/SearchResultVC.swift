@@ -15,6 +15,7 @@ class SearchResultVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        tableView.rowHeight = Constants.defaultCellHeight
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,9 +35,27 @@ extension SearchResultVC: UITableViewDataSource {
                                  for: indexPath) as? ITunesCell else {
                                     fatalError("ITunesCellが取得できない。")
         }
-        if !tracks.isEmpty {
+        //画像の取得・表示処理の開始
+        if !tracks.isEmpty, indexPath.row < tracks.count {
+            let track = tracks[indexPath.row]
             cell.itunesTrack = tracks[indexPath.row]
+            let artworkRepo = ArtworkRepository(dependency: ArtworkClient(dependency: (NetworkUtil())))
+            artworkRepo.artwork(in: track.artworkUrl100) { result in
+                switch result {
+                case .success(let artwork):
+                    DispatchQueue.main.async {
+                        cell.artwork = artwork
+                    }
+                case .failure(let error):
+                    debugPrint(error)
+                }
+            }
         }
         return cell
+    }
+    func tableView(_ tableView: UITableView,
+                   heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return Constants.defaultCellHeight
     }
 }

@@ -83,7 +83,7 @@ final class ArtworkDao: DaoProtocol {
         guard let object = dao.findFirst(key:id as AnyObject) else {
             return nil
         }
-        return object
+        return ArtworkDto(value: object)
     }
     
     static func findAll() -> [ArtworkDto] {
