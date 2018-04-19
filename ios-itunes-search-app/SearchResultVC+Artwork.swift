@@ -16,13 +16,7 @@ extension SearchResultVC: DisplayArtwork {
                  at row: Int) {
         let indexPath = IndexPath(row: row,
                                   section: 0)
-        guard let cell = tableView
-            .dequeueReusableCell(withIdentifier: ITunesCell.identifier,
-                                 for: indexPath) as? ITunesCell else {
-                                    fatalError("ITunesCellが取得できない。")
-        }
-        cell.artwork = artwork
-//        tableView.reloadRows(at: [indexPath], with: .none)
-        tableView.reloadData()
+        self.artworks.updateValue(artwork, forKey: row)
+        tableView.reloadRows(at: [indexPath], with: .none)
     }
 }

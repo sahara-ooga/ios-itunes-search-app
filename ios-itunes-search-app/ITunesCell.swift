@@ -32,9 +32,4 @@ class ITunesCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-
-    override func prepareForReuse() {
-        // セルが画像をキャッシュして、同じ画像が表示されてしまうので初期化
-        self.artworkView.image = nil;
-    }
 }

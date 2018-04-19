@@ -42,9 +42,9 @@ extension SearchResultViewModel: SearchResultVMProtocol {
                             self?.tracks.append(contentsOf: itunesResponse.results)
                             self?.delegate?.didReceive(tracks: itunesResponse.results)
                             //検索結果を受け取ったら、画像の取得処理を開始する
-//                            itunesResponse.results.enumerated().forEach { (index, track) in
-//                                self?.fetchArtwork(at: index, of : track)
-//                            }
+                            itunesResponse.results.enumerated().forEach { (index, track) in
+                                self?.fetchArtwork(at: index, of : track)
+                            }
                         case .failure(let error):
                             self?.delegate?.didReceive(error: error)
                         }

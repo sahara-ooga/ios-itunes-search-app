@@ -8,9 +8,11 @@
 
 import UIKit
 
+
 class SearchResultVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var tracks: [iTunesTrack] = []
+    var artworks: [Int: Artwork] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,22 +37,28 @@ extension SearchResultVC: UITableViewDataSource {
                                  for: indexPath) as? ITunesCell else {
                                     fatalError("ITunesCellが取得できない。")
         }
-        //画像の取得・表示処理の開始
-        if !tracks.isEmpty, indexPath.row < tracks.count {
-            let track = tracks[indexPath.row]
-            cell.itunesTrack = tracks[indexPath.row]
-            let artworkRepo = ArtworkRepository(dependency: ArtworkClient(dependency: (NetworkUtil())))
-            artworkRepo.artwork(in: track.artworkUrl100) { result in
-                switch result {
-                case .success(let artwork):
-                    DispatchQueue.main.async {
-                        cell.artwork = artwork
-                    }
-                case .failure(let error):
-                    debugPrint(error)
-                }
-            }
+        cell.itunesTrack = tracks[indexPath.row]
+        
+        if let artwork = artworks[indexPath.row] {
+            cell.artwork = artwork
         }
+        //画像の取得・表示処理の開始
+//        if !tracks.isEmpty, indexPath.row < tracks.count, cell.artwork == nil {
+//            let track = tracks[indexPath.row]
+//            cell.itunesTrack = tracks[indexPath.row]
+//            //let artworkRepo = ArtworkRepository(dependency: ArtworkClient(dependency: (NetworkUtil())))
+//            artworkRepo.artwork(in: track.artworkUrl100) {[weak self] result in
+//                switch result {
+//                case .success(let artwork):
+//                    DispatchQueue.main.async {
+//                        cell.artwork = artwork
+//                        self?.tableView.reloadRows(at: [indexPath], with: .none)
+//                    }
+//                case .failure(let error):
+//                    debugPrint(error)
+//                }
+//            }
+//        }
         return cell
     }
     func tableView(_ tableView: UITableView,

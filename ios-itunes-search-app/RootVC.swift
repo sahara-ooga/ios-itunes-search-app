@@ -153,10 +153,10 @@ extension RootVC: UISearchBarDelegate {
     }
     /// サーチバーの中身が更新されるときに呼ばれる
     /// 日本語入力の場合、確定ボタンを押す・文字を削除するタイミングで呼ばれる
-    func searchBar(_ searchBar: UISearchBar,
-                   textDidChange searchText: String) {
-        print(searchText)
-    }
+//    func searchBar(_ searchBar: UISearchBar,
+//                   textDidChange searchText: String) {
+//        print(searchText)
+//    }
     /// キャンセルボタンをクリックしたときに呼ばれる
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""

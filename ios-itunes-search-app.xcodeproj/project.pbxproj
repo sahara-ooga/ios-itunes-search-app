@@ -263,9 +263,9 @@
 			isa = PBXGroup;
 			children = (
 				10916AD020834F770081888C /* SearchResultVC.swift */,
+				10C845EE2086259E0096BA6F /* SearchResultVC+Artwork.swift */,
 				10916AD72083502D0081888C /* SearchResultVC.storyboard */,
 				10916ACC208335FD0081888C /* ITunesCell.swift */,
-				10C845EE2086259E0096BA6F /* SearchResultVC+Artwork.swift */,
 			);
 			name = SearchResultVC;
 			sourceTree = "<group>";
