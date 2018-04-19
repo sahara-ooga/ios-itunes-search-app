@@ -110,6 +110,8 @@ extension RootVC: SearchResultDelegate {
         } else {
             display(vc: .searchResult, tracks: tracks)
         }
+        //インジケータ表示終了
+        endIndicating()
     }
     func didReceive(artwork: Artwork, at index: Int) {
         DispatchQueue.main.async {
@@ -130,6 +132,8 @@ extension RootVC: SearchResultDelegate {
         default:
             NSObject.logPrint("An error happened.")
         }
+        //インジケータ表示終了
+        endIndicating()
     }
 }
 // MARK: Search Bar
@@ -145,6 +149,8 @@ extension RootVC: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let searchBarText = searchBar.text {
             print("searchText:\(searchBarText)")
+            //インジケータ表示開始
+            startToIndicate()
             //空白は+に置換
             let searchText = searchBarText.replacingOccurrences(of: " ", with: "+")
             self.searchResultViewModel.search(query: searchText,
@@ -161,5 +167,13 @@ extension RootVC: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
         searchBar.resignFirstResponder()
+    }
+}
+extension RootVC {
+    func startToIndicate() {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+    func endIndicating() {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
 }
