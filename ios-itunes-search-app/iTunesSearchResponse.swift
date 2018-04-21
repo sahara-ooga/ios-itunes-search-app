@@ -11,11 +11,6 @@ import Foundation
 struct iTunesSearchResponse: Codable {
     let resultCount: Int
     let results: [iTunesTrack]
-    
-    enum CodingKeys: String, CodingKey {
-        case resultCount = "resultCount"
-        case results = "results"
-    }
 }
 
 struct iTunesTrack: Codable {

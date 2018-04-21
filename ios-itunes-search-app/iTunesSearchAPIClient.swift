@@ -12,8 +12,8 @@ import Result
 
 protocol iTunesSearchAPIClientProtocol {
     func searchTracks(query: String,
-    limit: Int,
-    completion: @escaping (Result<iTunesSearchResponse, APIKit.SessionTaskError>) -> Void)
+                      limit: Int,
+                      completion: @escaping (Result<iTunesSearchResponse, APIKit.SessionTaskError>) -> Void)
 }
 struct iTunesSearchAPIClient {
     // MARK: DI
@@ -28,8 +28,8 @@ struct iTunesSearchAPIClient {
 }
 extension iTunesSearchAPIClient: iTunesSearchAPIClientProtocol {
     func searchTracks(query: String,
-                     limit: Int = 50,
-                     completion: @escaping (Result<iTunesSearchResponse, APIKit.SessionTaskError>) -> Void) {
+                      limit: Int = 50,
+                      completion: @escaping (Result<iTunesSearchResponse, APIKit.SessionTaskError>) -> Void) {
         let connectivityChecker = self.dependency
         //接続可能性をチェックし、通信不可能ならエラーを投げて終了
         let connectivity =  connectivityChecker.connectivity()

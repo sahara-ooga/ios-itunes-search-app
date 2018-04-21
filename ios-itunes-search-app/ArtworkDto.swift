@@ -12,8 +12,8 @@ class ArtworkDto: Object {
     @objc dynamic var id = 0
     @objc dynamic var url = ""
     
-    @objc dynamic private var _image: UIImage? = nil
-    @objc dynamic private var imageData: Data? = nil
+    @objc dynamic private var _image: UIImage?
+    @objc dynamic private var imageData: Data?
     
     override static func primaryKey() -> String? {
         return "id"
@@ -25,15 +25,15 @@ class ArtworkDto: Object {
 }
 
 extension ArtworkDto {
-    @objc dynamic var image: UIImage?{
-        set{
+    @objc dynamic var image: UIImage? {
+        set {
             //imageにsetすると、自動的に_imageに値が保持され、imageDataにも変換&setされる。
             self._image = newValue
             if let value = newValue {
                 self.imageData = UIImagePNGRepresentation(value)
             }
         }
-        get{
+        get {
             if let image = self._image {
                 return image
             }

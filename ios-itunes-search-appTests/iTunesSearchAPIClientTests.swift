@@ -36,12 +36,12 @@ class iTunesSearchAPIClientTests: XCTestCase {
                                                                    expectResultCount)
                                                     expectation.fulfill()
         }
-        wait(for:[expectation],timeout:30.0)
+        wait(for: [expectation], timeout: 30.0)
     }
     /// iTunesSearchAPIClientの、通信不可能時の挙動を試す
     func testSearchTracksWhenNoConnectivity() {
         /// 通信不可能時の状況を再現するモック
-        struct MockNetworkUtil:ConnnectibityCheckable {
+        struct MockNetworkUtil: ConnnectibityCheckable {
             func connectivity() -> Connnectibity {
                 return .none
             }
@@ -52,14 +52,12 @@ class iTunesSearchAPIClientTests: XCTestCase {
         searchAPIClient.searchTracks(query: "Neil+Young",
                                        limit: expectResultCount) {result in
                                             switch result {
-                                            case .failure(_):
+                                            case .failure:
                                                 expectation.fulfill()
-                                            case .success(_):
+                                            case .success:
                                                 XCTFail("通信してしまったので失敗")
                                             }
         }
-        wait(for:[expectation],timeout:30.0)
+        wait(for: [expectation], timeout: 30.0)
     }
 }
-
-

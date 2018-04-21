@@ -35,7 +35,7 @@ class iTunesSearchAPITests: XCTestCase {
                 XCTFail("fail to search.")
             }
         }
-        wait(for:[expectation],timeout:30.0)
+        wait(for: [expectation], timeout: 30.0)
     }
     
 }

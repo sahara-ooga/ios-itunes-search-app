@@ -43,7 +43,7 @@ extension SearchResultViewModel: SearchResultVMProtocol {
                             self?.delegate?.didReceive(tracks: itunesResponse.results)
                             //検索結果を受け取ったら、画像の取得処理を開始する
                             itunesResponse.results.enumerated().forEach { (index, track) in
-                                self?.fetchArtwork(at: index, of : track)
+                                self?.fetchArtwork(at: index, of: track)
                             }
                         case .failure(let error):
                             self?.delegate?.didReceive(error: error)
@@ -51,8 +51,8 @@ extension SearchResultViewModel: SearchResultVMProtocol {
         }
     }
     func fetchArtwork(from searchResult: iTunesSearchResponse) {
-        searchResult.results.enumerated().forEach { [weak self] (index,track) in
-            self?.fetchArtwork(at: index, of : track)
+        searchResult.results.enumerated().forEach { [weak self] (index, track) in
+            self?.fetchArtwork(at: index, of: track)
         }
     }
     func fetchArtwork(at index: Int, of track: iTunesTrack) {

@@ -2,6 +2,9 @@
 disabled_rules:
 - trailing_whitespace # 余分に改行がある方が視認性が上がる為、無効
 - type_name # クラス名は長くして情報を詰めておく必要もある為、無効
+- identifier_name # 名前は短く定義することも可能にしておく
+- multiple_closures_with_trailing_closure # クロージャの後に、ラベルを省略して後続のクロージャの引数を記述することで可読性を確保
+- nesting #ネスト型を許容
 
 # ルール一覧を表示
 #- colon
@@ -11,7 +14,6 @@ disabled_rules:
 #- function_body_length
 #- leading_whitespace
 #- line_length
-#- nesting
 #- operator_whitespace
 #- return_arrow_whitespace
 #- todo

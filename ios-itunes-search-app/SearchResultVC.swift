@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class SearchResultVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var tracks: [iTunesTrack] = []
@@ -62,8 +61,7 @@ extension SearchResultVC: UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView,
-                   heightForRowAt indexPath: IndexPath) -> CGFloat
-    {
+                   heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Constants.defaultCellHeight
     }
 }

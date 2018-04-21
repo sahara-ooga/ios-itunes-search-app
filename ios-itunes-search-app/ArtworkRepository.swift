@@ -11,10 +11,10 @@ import Result
 import UIKit
 
 protocol ArtworkRepositoryProtocol {
-    func artwork(in url:String,
-                 completion: @escaping (Result<Artwork, APIKit.SessionTaskError>) -> Void) -> Void
+    func artwork(in url: String,
+                 completion: @escaping (Result<Artwork, APIKit.SessionTaskError>) -> Void)
 }
-final class ArtworkRepository: ArtworkRepositoryProtocol,DependencyInjectionable {
+final class ArtworkRepository: ArtworkRepositoryProtocol, DependencyInjectionable {
     let realmQueue = DispatchQueue.main
     typealias Dependency = (ImageDownloadable)
     var dependency: (ImageDownloadable)
@@ -23,38 +23,7 @@ final class ArtworkRepository: ArtworkRepositoryProtocol,DependencyInjectionable
         self.dependency = dependency
     }
     func artwork(in url: String,
-                 completion: @escaping (Result<Artwork, SessionTaskError>) -> Void)  {
-//        //キャッシュからアートワークを検索し、画像があれば完了ハンドラに渡す
-//        let predicate = NSPredicate(format: "url LIKE '\(url)'")
-//        //TODO: Daoのプロトコル化
-//        let result = ArtworkDao.find(by: predicate)
-//        if !(result.isEmpty) {
-//            let artwork = Artwork(from: result[0])
-//            completion(.success(artwork))
-//            return
-//        }
-//        //キャッシュがなければ、URLから取得する
-//        //イメージを取得したら、Artwork型に変換し、キャッシュに保存してから完了ハンドラに渡す
-//        let imageDownloader = self.dependency
-//        imageDownloader.downloadImage(url: url) {
-//            result in
-//            switch result {
-//            case .success(let image):
-//                let dto = ArtworkDto()
-//                dto.id = 1
-//                dto.url = url
-//                dto.image = image
-//                //キャッシュ保存を経てidが変化していることに注意
-//                let insertedDto: ArtworkDto = ArtworkDao.add(dto)
-//                let artwork = Artwork(from: insertedDto)
-//                completion(.success(artwork))
-//            case .failure(let error):
-//                completion(.failure(error))
-//            }
-//        }
-        //::::::::::::::::::::::::::::::::::
-        //------ここから新しいパート----------
-        //::::::::::::::::::::::::::::::::::
+                 completion: @escaping (Result<Artwork, SessionTaskError>) -> Void) {
         search(from: url) { [weak self] realmSearchResult in
             switch realmSearchResult {
             case .some(let artworkDto):
@@ -63,8 +32,7 @@ final class ArtworkRepository: ArtworkRepositoryProtocol,DependencyInjectionable
                 //キャッシュがなければ、URLから取得する
                 //イメージを取得したら、Artwork型に変換し、キャッシュに保存してから完了ハンドラに渡す
                 let imageDownloader = self?.dependency
-                imageDownloader?.downloadImage(url: url) {
-                    result in
+                imageDownloader?.downloadImage(url: url) { result in
                     switch result {
                     case .success(let image):
                         let dto = ArtworkDto()
@@ -94,8 +62,7 @@ extension ArtworkRepository {
     func search(from url: String,
                 completion: @escaping (SearchResult) -> Void) {
         let predicate = NSPredicate(format: "url LIKE '\(url)'")
-        execute(realmHandler: { ArtworkDao.find(by: predicate) })
-                { (result: [ArtworkDto]) in
+        execute(realmHandler: { ArtworkDao.find(by: predicate) }) { (result: [ArtworkDto]) in
                     if result.isEmpty {
                         completion(.none)
                     } else {

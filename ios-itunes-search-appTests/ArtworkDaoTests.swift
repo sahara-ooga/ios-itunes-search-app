@@ -27,7 +27,7 @@ class ArtworkDaoTests: XCTestCase {
         object.id = expectedId
         object.url = expectedUrl
         object.image = expectedImage
-        ArtworkDao.add(model:object)
+        ArtworkDao.add(model: object)
         //Verify
         verifyFirstItem(expectedId: expectedId,
                         expectedUrl: expectedUrl,
@@ -44,7 +44,7 @@ class ArtworkDaoTests: XCTestCase {
         object.image = expected.image
         
         //Exercise
-        expected.id = ArtworkDao.add(model:object)
+        expected.id = ArtworkDao.add(model: object)
         let result = ArtworkDao.find(by: expected.id)
         
         //Verify
@@ -62,7 +62,7 @@ class ArtworkDaoTests: XCTestCase {
         object.image = UIImage(named: "snow.jpg")
         
         //Execute
-        let addedId = ArtworkDao.add(model:object)
+        let addedId = ArtworkDao.add(model: object)
         expected.id = addedId
         
         //load added item
@@ -71,7 +71,7 @@ class ArtworkDaoTests: XCTestCase {
             return
         }
         //update added item
-        ArtworkDao.update(model: loaded){
+        ArtworkDao.update(model: loaded) {
             //******注意*******
             //Dao.findメソッドで取得したオブジェクトは、
             //writeの引数のクロージャ内で更新しないとエラーが発生した
@@ -91,29 +91,29 @@ class ArtworkDaoTests: XCTestCase {
         object.image = UIImage(named: "snow.jpg")
         
         //Execute
-        let addedId = ArtworkDao.add(model:object)
+        let addedId = ArtworkDao.add(model: object)
         ArtworkDao.delete(id: addedId)
         
         //Verify
-        verifyCount(count:0)
+        verifyCount(count: 0)
     }
     func testFindAllItem() {
         
         //Setup
-        let tasks = [ArtworkDto(),ArtworkDto(),ArtworkDto()]
+        let tasks = [ArtworkDto(), ArtworkDto(), ArtworkDto()]
         
         //Exercise
         _ = tasks.map {
-            ArtworkDao.add(model:$0)
+            ArtworkDao.add(model: $0)
         }
         
         //Verify
-        verifyCount(count:3)
+        verifyCount(count: 3)
     }
     /// 3つエンティティを追加し、ロードする際にURLで１つに絞り込む
     func testFindByUrl() {
         let expected = (count: 1, image: UIImage(named: "snow.jpg"))
-        threeArtworks.forEach({ArtworkDao.add(model:$0)})
+        threeArtworks.forEach({ArtworkDao.add(model: $0)})
         let predicates = [
             NSPredicate(format: "url = %@", argumentArray: ["https://1.example.com"])
             ]
@@ -126,14 +126,14 @@ class ArtworkDaoTests: XCTestCase {
     /// LIKE句で、URLに関するワイルドカードを使って絞り込む
     func testFind3RecordByUrl() {
         let expected = 3
-        threeArtworks.forEach({ArtworkDao.add(model:$0)})
+        threeArtworks.forEach({ArtworkDao.add(model: $0)})
         let predicate = NSPredicate(format: "url LIKE '*.example.com'")
         let result = ArtworkDao.find(by: predicate)
         XCTAssertEqual(result.count, expected)
     }
-    func testFindURL(){
+    func testFindURL() {
         let expected = (count: 1, image: UIImage(named: "snow.jpg"))
-        threeArtworks.forEach({ArtworkDao.add(model:$0)})
+        threeArtworks.forEach({ArtworkDao.add(model: $0)})
         let predicate = NSPredicate(format: "url CONTAINS '2.example.com'")
         let result = ArtworkDao.find(by: predicate)
         XCTAssertEqual(result.count, expected.count)
@@ -141,8 +141,9 @@ class ArtworkDaoTests: XCTestCase {
     }
 }
 extension XCTestCase {
-    func verifyFirstItem(expectedId: Int, expectedUrl: String,
-                            expectedImage: UIImage?) {
+    func verifyFirstItem(expectedId: Int,
+                         expectedUrl: String,
+                         expectedImage: UIImage?) {
         
         let result = ArtworkDao.findAll()
         let firstItem = result.first

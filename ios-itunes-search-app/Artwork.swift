@@ -8,7 +8,7 @@
 
 import UIKit
 import RepositoryTool
-
+// swiftlint:disable identifier_name
 struct Artwork {
     let id: Int
     let url: String

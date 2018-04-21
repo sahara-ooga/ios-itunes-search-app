@@ -10,4 +10,5 @@ enum ArtworkResponseError: Error {
     case ressponseIsNil
     case dataIsNil
     case imageTranslation
+    case imageDownload(Error)
 }

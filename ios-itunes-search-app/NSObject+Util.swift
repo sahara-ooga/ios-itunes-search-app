@@ -8,16 +8,16 @@
 
 import Foundation
 extension NSObject {
-    static func logPrint(_ strings:String...,
-        file:String = #file,
-        line:Int = #line,
-        column:Int = #column,
-        function:String = #function){
+    static func logPrint(_ strings: String...,
+                         file: String = #file,
+                         line: Int = #line,
+                         column: Int = #column,
+                         function: String = #function) {
         print("logPrint>>>>>>>>>>>>>>>>>>>>>>")
-        print("file:",file)
-        print("line:",line)
-        print("column:",column)
-        print("function:",function)
+        print("file:", file)
+        print("line:", line)
+        print("column:", column)
+        print("function:", function)
         
         for string in strings {
             print(string)

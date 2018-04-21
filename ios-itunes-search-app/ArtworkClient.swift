@@ -5,7 +5,6 @@
 //  Created by yogasawara@stv on 2018/04/08.
 //  Copyright © 2018年 sunday carpenter. All rights reserved.
 //
-
 import UIKit
 import Result
 import APIKit
@@ -24,9 +23,9 @@ struct ArtworkClient: DependencyInjectionable, ImageDownloadable {
     init(dependency: Dependency) {
         self.dependency = dependency
     }
-    
+    // MARK: download
     func downloadImage(url: String,
-                      completion: @escaping (Result<UIImage, APIKit.SessionTaskError>) -> Void) {
+                       completion: @escaping (Result<UIImage, APIKit.SessionTaskError>) -> Void) {
         let connectivityChecker = self.dependency
         //接続可能性をチェックし、通信不可能ならエラーを投げて終了
         let connectivity =  connectivityChecker.connectivity()
@@ -41,8 +40,7 @@ struct ArtworkClient: DependencyInjectionable, ImageDownloadable {
         let session = URLSession(configuration: .default)
         let downloadTask = session.dataTask(with: imageURL) { (data, _, error) in
             if let e = error {
-                //TODO: エラーの分類
-                print(e)
+                completion(.failure(.responseError(ArtworkResponseError.imageDownload(e))))
             } else {
                 guard let imageData = data else {
                     completion(.failure(SessionTaskError.responseError(ArtworkResponseError.dataIsNil)))

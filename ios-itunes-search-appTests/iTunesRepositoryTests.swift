@@ -42,7 +42,7 @@ class iTunesRepositoryTests: XCTestCase {
         }
     }
 }
-fileprivate struct MockItunesAPIClient {
+private struct MockItunesAPIClient {
     typealias Completion = (((Result<iTunesSearchResponse, SessionTaskError>) -> Void) -> Void)
     let response: iTunesSearchResponse
     let completion: Completion?

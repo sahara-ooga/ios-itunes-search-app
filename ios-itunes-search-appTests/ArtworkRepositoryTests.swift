@@ -23,7 +23,8 @@ class ArtworkRepositoryTests: XCTestCase {
         super.tearDown()
     }
     
-    /// 指定したURLに紐付いたキャッシュ画像データを取り出し、ダウンロードしようとしていないことを確認
+    /// 先にキャッシュを保存し、次にキャッシュに紐付いたURLを渡して、
+    /// キャッシュ画像データを取り出し、新たに画像をダウンロードしようとしていないことを確認
     func testFetchFromCache() {
         let url = "example.com"
         // 一旦キャッシュに保存させる
@@ -47,7 +48,7 @@ class ArtworkRepositoryTests: XCTestCase {
                             rhs: Artwork(from: dto))
             case .failure(let error):
                 print(error)
-                XCTFail()
+                XCTFail("ダウンロードエラーが発生")
             }
         }
     }
@@ -81,8 +82,9 @@ extension XCTestCase {
         compareJpegImage(lhs: lhs.image, rhs: rhs.image)
     }
 }
-fileprivate class MockImageDownload: ImageDownloadable {
+private class MockImageDownload: ImageDownloadable {
     typealias Completion = ((Result<UIImage, SessionTaskError>) -> Void) -> Void
+    /// ダウンロード処理が呼ばれたらカウントが一つ増える
     var count: Int = 0
     let completion: Completion?
     

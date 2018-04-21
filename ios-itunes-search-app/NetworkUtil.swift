@@ -38,4 +38,3 @@ extension ConnnectibityCheckable {
 
 struct NetworkUtil { }
 extension NetworkUtil: ConnnectibityCheckable { }
-

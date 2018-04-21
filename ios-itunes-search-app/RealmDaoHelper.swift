@@ -10,7 +10,7 @@ import RealmSwift
 import UIKit
 
 // swiftlint:disable identifier_name
-final class RealmDaoHelper <T : RealmSwift.Object> {
+final class RealmDaoHelper <T: RealmSwift.Object> {
     let realm: Realm
     
     init() {
@@ -27,7 +27,7 @@ final class RealmDaoHelper <T : RealmSwift.Object> {
             return nil
         }
         
-        if let last = realm.objects(T.self).last,// as? RealmSwift.Object,
+        if let last = realm.objects(T.self).last, // as? RealmSwift.Object,
             let lastId = last[key] as? Int {
             return lastId + 1
         } else {
@@ -67,7 +67,7 @@ final class RealmDaoHelper <T : RealmSwift.Object> {
     ///
     /// - Parameter predicate: フィルタリングの条件
     /// - Returns: フィルタリングしたレコードの配列
-    func find(by predicate:NSPredicate) -> Results<T> {
+    func find(by predicate: NSPredicate) -> Results<T> {
         return realm.objects(T.self).filter(predicate)
     }
     
@@ -75,14 +75,14 @@ final class RealmDaoHelper <T : RealmSwift.Object> {
     ///
     /// - Parameter predicate: フィルタリングの条件
     /// - Returns: フィルタリングしたレコードの配列
-    func find(by predicate:String) -> Results<T> {
+    func find(by predicate: String) -> Results<T> {
         return realm.objects(T.self).filter(predicate)
     }
     
     /**
      * レコードを追加
      */
-    func add(d :T) {
+    func add(d: T) {
         do {
             try realm.write {
                 realm.add(d)
