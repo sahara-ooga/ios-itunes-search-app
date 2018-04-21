@@ -40,7 +40,7 @@
 
 ## クラス関連図
 
-![iTunes検索アプリ-クラス関連図](aaa)
+![iTunes検索アプリ-クラス関連図](https://github.com/sahara-ooga/ios-itunes-search-app/raw/feature/documents/Documents/iTunes検索アプリ-クラス関連図.png)
 
 ## 主なクラス
 
@@ -98,11 +98,11 @@
 
 ### ユーザー検索フォーム入力時
 
-![iTunes検索アプリ-フローチャート-ユーザー検索フォーム入力時](example.com)
+![iTunes検索アプリ-フローチャート-ユーザー検索フォーム入力時](https://github.com/sahara-ooga/ios-itunes-search-app/raw/feature/documents/Documents/iTunes検索アプリ-フローチャート-ユーザー検索フォーム入力時.png)
 
 ### 検索処理
 
-！[iTunes検索アプリ-フローチャート-検索・画像取得処理](exmappel.com)
+！[iTunes検索アプリ-フローチャート-検索・画像取得処理](https://github.com/sahara-ooga/ios-itunes-search-app/raw/feature/documents/Documents/iTunes検索アプリ-フローチャート-検索・画像取得処理.png)
 
 ### 表示項目
 
