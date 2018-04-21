@@ -180,6 +180,7 @@
 		1061B50220641362006B75E6 = {
 			isa = PBXGroup;
 			children = (
+				1061B52F2064140A006B75E6 /* README.md */,
 				1061B52E206413D9006B75E6 /* Documents */,
 				1061B50D20641363006B75E6 /* ios-itunes-search-app */,
 				1061B52220641363006B75E6 /* ios-itunes-search-appTests */,
@@ -234,7 +235,6 @@
 				1002CEAB2088DC2000CD357D /* iTunes検索アプリ-フローチャート-ユーザー検索フォーム入力時.png */,
 				1002CEAC2088DC2000CD357D /* iTunes検索アプリ-フローチャート-検索・画像取得処理.png */,
 				1002CEA82088DB7400CD357D /* iTunes検索アプリ.md */,
-				1061B52F2064140A006B75E6 /* README.md */,
 				1061B53020641441006B75E6 /* APIRequest&Response.md */,
 			);
 			path = Documents;
