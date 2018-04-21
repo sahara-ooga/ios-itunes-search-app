@@ -9,10 +9,12 @@
 import RealmSwift
 import UIKit
 
+// swiftlint:disable identifier_name
 final class RealmDaoHelper <T : RealmSwift.Object> {
     let realm: Realm
     
     init() {
+        // swiftlint:disable:next force_try
         try! realm = Realm()
     }
     

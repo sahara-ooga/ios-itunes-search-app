@@ -63,6 +63,7 @@ extension RootVC {
     }
 }
 // MARK: - Display View Controller(s)
+// swiftlint:disable force_cast
 extension RootVC {
     func setUpVCs() {
         do {

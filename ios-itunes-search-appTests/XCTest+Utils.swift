@@ -22,7 +22,7 @@
 //  SOFTWARE.
 //
 import XCTest
-
+// swiftlint:disable force_cast force_try
 extension XCTestCase {
     static func jsonDataFromFile(_ filename: String) -> Data? {
         let jsonPath = Bundle(for: self).path(forResource: filename, ofType: "json")
