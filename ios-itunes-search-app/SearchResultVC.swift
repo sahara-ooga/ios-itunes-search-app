@@ -43,6 +43,8 @@ extension SearchResultVC: UITableViewDataSource {
         }
         // NOTE: 途中は画像の取得・表示処理をここでやっていたのだが、上手くいかず
             //   他のデータソースから流し込むフローでないとうまくいかない
+        
+        cell.layoutMargins = UIEdgeInsets.zero
         return cell
     }
     func tableView(_ tableView: UITableView,
