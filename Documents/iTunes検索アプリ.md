@@ -102,7 +102,7 @@
 
 ### 検索処理
 
-！[iTunes検索アプリ-フローチャート-検索・画像取得処理](https://github.com/sahara-ooga/ios-itunes-search-app/raw/feature/documents/Documents/iTunes検索アプリ-フローチャート-検索・画像取得処理.png)
+![iTunes検索アプリ-フローチャート-検索・画像取得処理](https://github.com/sahara-ooga/ios-itunes-search-app/raw/1057243f466ad19390f0fcaf93ef2b8568171796/Documents/iTunes検索アプリ-フローチャート-検索・画像取得処理.png)
 
 ### 表示項目
 
