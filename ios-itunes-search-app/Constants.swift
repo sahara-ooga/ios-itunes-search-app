@@ -21,6 +21,5 @@ struct Constants {
     static let connectionState: ConnectionState = .nomal
     
     static let defaultCellHeight: CGFloat = 70.0
-    static let defaultTrackNum = 5
-
+    static let defaultTrackNum = 100
 }
