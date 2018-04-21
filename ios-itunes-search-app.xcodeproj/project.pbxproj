@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1011B7DA2083121B00AAE928 /* iTunesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1011B7D92083121B00AAE928 /* iTunesRepository.swift */; };
 		1011B7DC2083192B00AAE928 /* iTunesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1011B7DB2083192B00AAE928 /* iTunesRepositoryTests.swift */; };
+		10327B9E208ACDC60064BB1F /* iTunes検索アプリ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 10327B9D208ACDC60064BB1F /* iTunes検索アプリ.pdf */; };
 		10457EAE2082420100E938BD /* ArtworkDtoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10457EAD2082420100E938BD /* ArtworkDtoTests.swift */; };
 		10457EB0208243CB00E938BD /* ArtworkDaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10457EAF208243CB00E938BD /* ArtworkDaoTests.swift */; };
 		10457EB4208250F600E938BD /* spareribs.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10457EB3208250F600E938BD /* spareribs.jpg */; };
@@ -83,6 +84,7 @@
 		1011B7DB2083192B00AAE928 /* iTunesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = iTunesRepositoryTests.swift; path = "ios-itunes-search-appTests/iTunesRepositoryTests.swift"; sourceTree = SOURCE_ROOT; };
 		10327B9B208ACB060064BB1F /* iTunes検索アプリ-フローチャート-ユーザー検索フォーム入力時.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunes検索アプリ-フローチャート-ユーザー検索フォーム入力時.png"; sourceTree = "<group>"; };
 		10327B9C208ACB060064BB1F /* iTunes検索アプリ-フローチャート-検索・画像取得処理.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunes検索アプリ-フローチャート-検索・画像取得処理.png"; sourceTree = "<group>"; };
+		10327B9D208ACDC60064BB1F /* iTunes検索アプリ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "iTunes検索アプリ.pdf"; sourceTree = "<group>"; };
 		10457EAD2082420100E938BD /* ArtworkDtoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkDtoTests.swift; sourceTree = "<group>"; };
 		10457EAF208243CB00E938BD /* ArtworkDaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkDaoTests.swift; sourceTree = "<group>"; };
 		10457EB3208250F600E938BD /* spareribs.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = spareribs.jpg; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 		1061B52E206413D9006B75E6 /* Documents */ = {
 			isa = PBXGroup;
 			children = (
+				10327B9D208ACDC60064BB1F /* iTunes検索アプリ.pdf */,
 				10327B9B208ACB060064BB1F /* iTunes検索アプリ-フローチャート-ユーザー検索フォーム入力時.png */,
 				10327B9C208ACB060064BB1F /* iTunes検索アプリ-フローチャート-検索・画像取得処理.png */,
 				1002CEAA2088DC2000CD357D /* iTunes検索アプリ-クラス関連図.png */,
@@ -487,6 +490,7 @@
 				10457EB72082512500E938BD /* snow.jpg in Resources */,
 				1061B51420641363006B75E6 /* Main.storyboard in Resources */,
 				10916AD82083502D0081888C /* SearchResultVC.storyboard in Resources */,
+				10327B9E208ACDC60064BB1F /* iTunes検索アプリ.pdf in Resources */,
 				10916AD6208350120081888C /* EmptyResultVC.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
