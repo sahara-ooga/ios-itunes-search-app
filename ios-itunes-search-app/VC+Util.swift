@@ -16,7 +16,7 @@ extension UIViewController {
 extension UIViewController {
     func showOKAlert(title: String,
                      message: String,
-                     okButtonHandler: @escaping (UIAlertAction!) -> Void ) {
+                     okButtonHandler: @escaping (UIAlertAction) -> Void ) {
         // ① UIAlertControllerクラスのインスタンスを生成
         // タイトル, メッセージ, Alertのスタイルを指定する
         // 第3引数のpreferredStyleでアラートの表示スタイルを指定する
