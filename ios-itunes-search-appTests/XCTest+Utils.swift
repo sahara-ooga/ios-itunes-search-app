@@ -22,7 +22,7 @@
 //  SOFTWARE.
 //
 import XCTest
-// swiftlint:disable force_cast force_try vertical_parameter_alignment
+// swiftlint:disable force_cast force_try
 extension XCTestCase {
     static func jsonDataFromFile(_ filename: String) -> Data? {
         let jsonPath = Bundle(for: self).path(forResource: filename, ofType: "json")
@@ -39,25 +39,5 @@ extension XCTestCase {
         let jsonPath = Bundle(for: self).path(forResource: filename, ofType: "json")
         let jsonData = try? Data(contentsOf: URL(fileURLWithPath: jsonPath!))
         return try! JSONSerialization.jsonObject(with: jsonData!, options: []) as! [[String: AnyObject]]
-    }
-}
-extension XCTestCase {
-    // NOTE: Xcode9の挙動で、可変長引数の後の引数の位置が調整されてしまう（のでリントに引っかかる）
-    static func logPrint(strings: String...,
-        file: String = #file,
-        line: Int = #line,
-        column: Int = #column,
-        function: String = #function) {
-        print("logPrint>>>>>>>>>>>>>>>>>>>>>>")
-        print("file:", file)
-        print("line:", line)
-        print("column:", column)
-        print("function:", function)
-        
-        for string in strings {
-            print(string)
-        }
-        
-        print("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
     }
 }

@@ -13,7 +13,7 @@ class RootVC: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var resultView: UIView!
     var searchResultViewModel: SearchResultVMProtocol!
-    weak var displayArtwork: DisplayArtwork?
+    weak var artworkDisplayer: DisplayArtwork?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +37,7 @@ extension RootVC {
             setUpNoConnectionViewModel()
         }
     }
+    /// 通信可能時のViewModelを設定する
     func setUpNomalConnectionViewModel() {
         let apiClient = iTunesSearchAPIClient(dependency: NetworkUtil())
         let iTunesRepo = iTunesRepository(dependency: (apiClient))
@@ -79,11 +80,12 @@ extension RootVC {
             //検索結果のVCをセットする
             let storyboard = UIStoryboard(name: SearchResultVC.identifier,
                                           bundle: nil)
+            // NOTE: instantiateInitialViewControllerを使う際は、storyboardでの設定が必要
             let searchResultVC = storyboard.instantiateInitialViewController() as! SearchResultVC
             searchResultVC.view.isHidden = true
             self.addChildViewController(searchResultVC)
             self.resultView.addSubview(searchResultVC.view)
-            self.displayArtwork = searchResultVC
+            self.artworkDisplayer = searchResultVC
         }
     }
     func display(vc: DestinationVC, tracks: [iTunesTrack]) {
@@ -116,7 +118,7 @@ extension RootVC: SearchResultDelegate {
     }
     func didReceive(artwork: Artwork, at index: Int) {
         DispatchQueue.main.async {
-            self.displayArtwork?.display(artwork: artwork, at: index)
+            self.artworkDisplayer?.display(artwork: artwork, at: index)
         }
     }
     func didReceive(error: SessionTaskError) {
@@ -170,6 +172,7 @@ extension RootVC: UISearchBarDelegate {
         searchBar.resignFirstResponder()
     }
 }
+// MARK: - Indicator対応
 extension RootVC {
     func startToIndicate() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true

@@ -41,23 +41,8 @@ extension SearchResultVC: UITableViewDataSource {
         if let artwork = artworks[indexPath.row] {
             cell.artwork = artwork
         }
-        //画像の取得・表示処理の開始
-//        if !tracks.isEmpty, indexPath.row < tracks.count, cell.artwork == nil {
-//            let track = tracks[indexPath.row]
-//            cell.itunesTrack = tracks[indexPath.row]
-//            //let artworkRepo = ArtworkRepository(dependency: ArtworkClient(dependency: (NetworkUtil())))
-//            artworkRepo.artwork(in: track.artworkUrl100) {[weak self] result in
-//                switch result {
-//                case .success(let artwork):
-//                    DispatchQueue.main.async {
-//                        cell.artwork = artwork
-//                        self?.tableView.reloadRows(at: [indexPath], with: .none)
-//                    }
-//                case .failure(let error):
-//                    debugPrint(error)
-//                }
-//            }
-//        }
+        // NOTE: 途中は画像の取得・表示処理をここでやっていたのだが、上手くいかず
+            //   他のデータソースから流し込むフローでないとうまくいかない
         return cell
     }
     func tableView(_ tableView: UITableView,

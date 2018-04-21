@@ -51,7 +51,7 @@ extension MockItunesAPIClient: iTunesSearchAPIClientProtocol {
     func searchTracks(query: String,
                       limit: Int,
                       completion: @escaping (Result<iTunesSearchResponse, SessionTaskError>) -> Void) {
-        XCTestCase.logPrint(strings: "呼ばれたお")
+        XCTestCase.logPrint("呼ばれたお")
         self.completion?(completion)
     }
 }

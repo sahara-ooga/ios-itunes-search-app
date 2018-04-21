@@ -69,7 +69,7 @@ class ArtworkRepositoryTests: XCTestCase {
                 self?.varify(lhs: artwork,
                        rhs: Artwork(from: findResult[0]))
             case .failure(let error):
-                XCTestCase.logPrint(strings: error.localizedDescription)
+                XCTestCase.logPrint(error.localizedDescription)
                 XCTFail("エラー発生")
             }
         }
