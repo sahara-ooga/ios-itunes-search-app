@@ -28,8 +28,12 @@ class ITunesCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    override func prepareForReuse() {
+        // セルが画像をキャッシュして、同じ画像が表示されてしまうので初期化
+        self.itunesTrack = nil
+        self.artwork = nil
     }
 }
