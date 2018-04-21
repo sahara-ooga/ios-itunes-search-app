@@ -79,10 +79,10 @@
 /* Begin PBXFileReference section */
 		1002CEA82088DB7400CD357D /* iTunes検索アプリ.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "iTunes検索アプリ.md"; sourceTree = "<group>"; };
 		1002CEAA2088DC2000CD357D /* iTunes検索アプリ-クラス関連図.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunes検索アプリ-クラス関連図.png"; sourceTree = "<group>"; };
-		1002CEAB2088DC2000CD357D /* iTunes検索アプリ-フローチャート-ユーザー検索フォーム入力時.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunes検索アプリ-フローチャート-ユーザー検索フォーム入力時.png"; sourceTree = "<group>"; };
-		1002CEAC2088DC2000CD357D /* iTunes検索アプリ-フローチャート-検索・画像取得処理.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunes検索アプリ-フローチャート-検索・画像取得処理.png"; sourceTree = "<group>"; };
 		1011B7D92083121B00AAE928 /* iTunesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesRepository.swift; sourceTree = "<group>"; };
 		1011B7DB2083192B00AAE928 /* iTunesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = iTunesRepositoryTests.swift; path = "ios-itunes-search-appTests/iTunesRepositoryTests.swift"; sourceTree = SOURCE_ROOT; };
+		10327B9B208ACB060064BB1F /* iTunes検索アプリ-フローチャート-ユーザー検索フォーム入力時.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunes検索アプリ-フローチャート-ユーザー検索フォーム入力時.png"; sourceTree = "<group>"; };
+		10327B9C208ACB060064BB1F /* iTunes検索アプリ-フローチャート-検索・画像取得処理.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunes検索アプリ-フローチャート-検索・画像取得処理.png"; sourceTree = "<group>"; };
 		10457EAD2082420100E938BD /* ArtworkDtoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkDtoTests.swift; sourceTree = "<group>"; };
 		10457EAF208243CB00E938BD /* ArtworkDaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkDaoTests.swift; sourceTree = "<group>"; };
 		10457EB3208250F600E938BD /* spareribs.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = spareribs.jpg; sourceTree = "<group>"; };
@@ -231,9 +231,9 @@
 		1061B52E206413D9006B75E6 /* Documents */ = {
 			isa = PBXGroup;
 			children = (
+				10327B9B208ACB060064BB1F /* iTunes検索アプリ-フローチャート-ユーザー検索フォーム入力時.png */,
+				10327B9C208ACB060064BB1F /* iTunes検索アプリ-フローチャート-検索・画像取得処理.png */,
 				1002CEAA2088DC2000CD357D /* iTunes検索アプリ-クラス関連図.png */,
-				1002CEAB2088DC2000CD357D /* iTunes検索アプリ-フローチャート-ユーザー検索フォーム入力時.png */,
-				1002CEAC2088DC2000CD357D /* iTunes検索アプリ-フローチャート-検索・画像取得処理.png */,
 				1002CEA82088DB7400CD357D /* iTunes検索アプリ.md */,
 				1061B53020641441006B75E6 /* APIRequest&Response.md */,
 			);
