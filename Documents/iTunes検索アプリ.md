@@ -293,3 +293,5 @@ class ArtworkDto: Object {
 [Reachability.swiftで通信状況を確認する - しめ鯖日記](http://www.cl9.info/entry/2017/10/24/144857)
 
 [Reachability.swift/ViewController.swift at master · ashleymills/Reachability.swift](https://github.com/ashleymills/Reachability.swift/blob/master/ReachabilitySample/ViewController.swift)
+
+[iOS 9で追加されたNSLayoutAnchor使うと簡単にわかりやすく間違えずにNSLayoutConstraint（制約）が作れます【Auto Layout】 - Qiita](https://qiita.com/yucovin/items/4bebcc7a8b1088b374c9)

@@ -75,6 +75,7 @@ extension RootVC {
             emptyVC.view.isHidden = true
             self.addChildViewController(emptyVC)
             self.resultView.addSubview(emptyVC.view)
+            self.extend(emptyVC.view, to: resultView)
         }
         do {
             //検索結果のVCをセットする
@@ -85,8 +86,20 @@ extension RootVC {
             searchResultVC.view.isHidden = true
             self.addChildViewController(searchResultVC)
             self.resultView.addSubview(searchResultVC.view)
+            // オートレイアウトをコードで設定する
+            self.extend(searchResultVC.view, to: resultView)
             self.artworkDisplayer = searchResultVC
         }
+    }
+    /// サブビューをresultView一杯に展開する（オートレイアウトを設定する）
+    ///
+    /// - Parameter view: 表示したいView
+    func extend(_ subview: UIView, to view: UIView) {
+        subview.translatesAutoresizingMaskIntoConstraints = false
+        subview.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        subview.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        subview.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+        subview.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
     }
     func display(vc: DestinationVC, tracks: [iTunesTrack]) {
         switch vc {
