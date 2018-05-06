@@ -18,6 +18,7 @@ extension Identifiable {
 }
 protocol CreatableVC: class, Creatable, Identifiable {
     var dependency: Dependency { get set }
+    static func create(dependency: Dependency) -> Self?
 }
 extension CreatableVC {
     /// <VCの名前>.storyboardが存在するVCの場合、VC自身を返す
