@@ -73,7 +73,7 @@ extension RootVC {
                                           bundle: nil)
             let emptyVC = storyboard.instantiateInitialViewController() as! EmptyResultVC
             emptyVC.view.isHidden = true
-            self.addChildViewController(emptyVC)
+            self.addChild(emptyVC)
             self.resultView.addSubview(emptyVC.view)
             self.extend(emptyVC.view, to: resultView)
         }
@@ -84,7 +84,7 @@ extension RootVC {
             // NOTE: instantiateInitialViewControllerを使う際は、storyboardでの設定が必要
             let searchResultVC = storyboard.instantiateInitialViewController() as! SearchResultVC
             searchResultVC.view.isHidden = true
-            self.addChildViewController(searchResultVC)
+            self.addChild(searchResultVC)
             self.resultView.addSubview(searchResultVC.view)
             // オートレイアウトをコードで設定する
             self.extend(searchResultVC.view, to: resultView)
@@ -109,7 +109,7 @@ extension RootVC {
             emptyView?.isHidden = false
             searchResultView.isHidden = true
         case .searchResult:
-            let searchResultVC = self.childViewControllers[1] as! SearchResultVC
+            let searchResultVC = self.children[1] as! SearchResultVC
             searchResultVC.tracks = tracks
             let emptyView = self.resultView.subviews.first
             let searchResultView = self.resultView.subviews[1]

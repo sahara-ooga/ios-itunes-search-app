@@ -30,7 +30,7 @@ extension ArtworkDto {
             //imageにsetすると、自動的に_imageに値が保持され、imageDataにも変換&setされる。
             self._image = newValue
             if let value = newValue {
-                self.imageData = UIImagePNGRepresentation(value)
+                self.imageData = value.pngData()
             }
         }
         get {

@@ -187,7 +187,7 @@ extension UIImage {
     /// JPEG由来のUIImageのインスタンスを文字列に変換する
     /// seealso: https://qiita.com/silent0321/items/4253c20e43afdbed8638
     var base64EncodedStringFromJpeg: String? {
-        guard let data = UIImageJPEGRepresentation(self, 0.0) else { return nil }
+        guard let data = self.jpegData(compressionQuality: 0.0) else { return nil }
         //BASE64のStringに変換する
         return data.base64EncodedString(options: .lineLength64Characters)
     }

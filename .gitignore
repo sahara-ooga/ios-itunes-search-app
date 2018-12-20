@@ -45,15 +45,15 @@ xcuserdata/
 #
 # Pods/
 
-#cocoapods key 
+#cocoapods key
 .env
 
 # Carthage
 #
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
-Carthage/Checkouts
-
-Carthage/Build
+Carthage/
+# Carthage/Checkouts
+# Carthage/Build
 
 # fastlane
 #
